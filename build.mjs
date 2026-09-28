@@ -8,7 +8,8 @@ const out=path.join(root,'dist');
 fs.rmSync(out,{recursive:true,force:true});
 fs.mkdirSync(out,{recursive:true});
 
-for(const rel of ['index.html','manifest.webmanifest','sw.js','icons/icon.svg']){
+const publish=['index.html','manifest.webmanifest','sw.js','icons/icon.svg'];
+for(const rel of publish){
   const src=path.join(root,rel);
   const dst=path.join(out,rel);
   if(!fs.existsSync(src)) throw new Error('Missing '+rel);
@@ -27,6 +28,14 @@ const requiredMarkers=[
 ];
 for(const marker of requiredMarkers){
   if(!html.includes(marker)) throw new Error('index.html missing required production marker: '+marker);
+}
+
+// Ensure every local manifest/icon reference in the HTML is actually published.
+for(const m of html.matchAll(/<(?:link|script)[^>]+(?:href|src)=["']([^"'?#]+)["']/gi)){
+  const ref=m[1];
+  if(/^(?:https?:|data:|#)/i.test(ref)) continue;
+  const rel=ref.replace(/^\//,'');
+  if(!fs.existsSync(path.join(out,rel))) throw new Error('HTML references missing production asset: '+ref);
 }
 
 const scripts=[...html.matchAll(/<script>([\s\S]*?)<\/script>/g)].map(m=>m[1]).join('\n');
@@ -49,7 +58,7 @@ fs.writeFileSync(path.join(out,'build-info.json'),JSON.stringify({
   app:'FluentIA',
   version:'6.4.0',
   builtAt:new Date().toISOString(),
-  validation:'inline-js+manifest+service-worker+secret-scan',
+  validation:'inline-js+manifest+service-worker+asset-links+secret-scan',
   indexSha256:sha(path.join(out,'index.html'))
 },null,2));
 
