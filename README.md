@@ -1,102 +1,145 @@
-# FluentIA 6.6.0 — inglês na vida real
+# FluentIA 7.0.0 — Speak First
 
-FluentIA é uma plataforma gratuita e local-first para estudar inglês do A0/Pre-A1 ao C2 com prática ativa, fala, escuta, leitura, escrita, vocabulário, gramática, revisão espaçada, situações reais e a professora virtual Lia.
+FluentIA é uma plataforma gratuita e local-first para estudar inglês do Pre-A1/A0 ao C2 com foco em uso real do idioma.
+
+A versão 7 muda a prioridade do produto: **o aluno precisa produzir inglês, não apenas reconhecer respostas**.
+
+## Método Speak First
+
+Cada unidade segue o ciclo:
+
+**ouvir → repetir em voz alta → compreender → escrever → produzir uma frase nova → receber feedback → revisar depois**
+
+Quando o navegador oferece reconhecimento de voz, a unidade exige evidência oral para ser concluída.
+
+Critérios internos da unidade:
+- pelo menos 75% de desempenho geral;
+- pelo menos 75% de inteligibilidade na repetição oral;
+- pelo menos 70% na fala livre/transferência;
+- atividade oral realmente feita pelo microfone quando o navegador oferece suporte.
+
+Quando reconhecimento de voz não existe no dispositivo, o aluno recebe fallback em texto. A plataforma informa que essa tentativa não comprova fala.
+
+## Feedback de fala
+
+O FluentIA mostra:
+- transcrição entendida pelo navegador;
+- pontuação interna de inteligibilidade;
+- palavras reconhecidas;
+- palavras esperadas que não foram reconhecidas;
+- palavras extras;
+- necessidade de repetir antes de avançar.
+
+Essa análise ajuda a praticar clareza, mas não é uma análise fonética clínica e não mede sotaque com precisão laboratorial.
+
+## Conversação com a Lia
+
+A conversa agora mantém histórico local por cenário.
+
+O aluno pode:
+- falar pelo microfone;
+- acompanhar legenda/transcrição;
+- receber correção imediata;
+- continuar uma conversa contextual;
+- abrir a transcrição;
+- tocar em uma palavra da conversa para salvá-la;
+- enviar palavras salvas para revisão espaçada.
+
+A Lia possui duas camadas:
+1. **IA generativa opcional no servidor**, quando `GEMINI_API_KEY` estiver configurada;
+2. **coach local gratuito**, usado como fallback automático.
+
+A chave nunca fica no navegador. Falha de rede ou cota externa não impede o curso-base de continuar.
+
+O backend pode usar `GEMINI_MODEL`; o padrão configurado no código é `gemini-3.5-flash-lite`.
+
+A Lia não pode aprovar prova, liberar faixa ou emitir certificado. Essas decisões pertencem ao motor pedagógico.
+
+## FluentIA Arcade
+
+A versão 7 inclui jogos próprios de recuperação:
+
+- **Audio Blitz** — ouvir antes de ler;
+- **Meaning Rush** — reconhecer intenção rapidamente;
+- **Sentence Builder** — reconstruir frases;
+- **Reverse Recall** — recuperar inglês a partir de uma situação.
+
+Os jogos usam conteúdo da própria trilha. Eles servem para repetição e memória; não substituem fala nem provas.
 
 ## Lia 3D interativa
 
-A Lia é uma personagem vetorial 3D construída diretamente para a web, não uma fotografia estática, GIF ou simples ícone.
+A Lia continua como personagem vetorial 3D construída diretamente na interface.
 
-Ela possui:
-- rosto e corpo em CSS 3D/Web;
-- olhos que acompanham o ponteiro;
-- animação de boca durante a fala;
-- estados de escuta, pensamento, fala, correção, incentivo e comemoração;
-- reação durante reconhecimento de voz;
-- reação às correções de aula;
-- reação à pronúncia e shadowing;
-- comemoração em conquistas;
-- presença flutuante em toda a plataforma;
-- integração com a tela de conversação e com o endpoint seguro da Lia.
+Ela reage aos estados:
+- ouvindo;
+- pensando;
+- falando;
+- corrigindo;
+- incentivando;
+- comemorando.
 
-O avatar não é um vídeo pré-gravado: seus estados são disparados pelo comportamento real da aplicação.
+Os olhos acompanham o ponteiro, a boca reage à síntese de voz e os estados são acionados pelo funcionamento real da aplicação.
 
-## Interface 6.6
+## Trilha e provas
 
-A home foi reconstruída para deixar a prática em primeiro plano: Lia em destaque, estados visíveis da tutora, acesso imediato a conversação, pronúncia, listening, vocabulário, gramática, EUA, revisão, trilha de níveis, missão diária e situações reais.
+A trilha vai de Pre-A1/A0 até C2.
 
-Não existe cartão de plano pago ou bloqueio "Pro" na experiência principal.
+Cada nível possui avaliação final antes da liberação da faixa seguinte.
 
-## O que a 6.6 entrega
+A avaliação combina compreensão e produção. O C2 pode liberar um **Certificado de Conquista Interna FluentIA** depois da aprovação.
 
-- trilha A0/Pre-A1 → C2;
+O certificado não é Cambridge, IELTS, TOEFL, diploma acadêmico ou certificação CEFR oficial.
+
+## Recursos
+
+- trilha Pre-A1/A0 → C2;
+- Speak First;
 - plano diário adaptativo;
-- Sprint prático de 12 minutos;
-- Shadowing para ouvir e repetir frases naturais;
-- Lia 3D interativa;
-- conversação guiada com feedback;
-- pronúncia e reconhecimento de fala quando o navegador oferece suporte;
-- listening, ditado, leitura e escrita;
-- vocabulário e gramática contextualizados;
-- revisão espaçada e caderno de erros;
-- cenários cotidianos, EUA e trabalho;
-- provas finais por nível;
-- próxima faixa bloqueada até aprovação;
-- certificado interno de conquista após aprovação no C2;
-- PWA instalável e uso offline das partes locais após cache;
-- progresso salvo no dispositivo;
-- backup/importação de progresso;
-- sem assinatura obrigatória para concluir a trilha principal.
+- Sprint de 12 minutos;
+- Lia 3D;
+- conversa com histórico;
+- legenda de fala;
+- palavras salvas da conversa;
+- pronúncia;
+- Shadowing;
+- listening;
+- ditado;
+- reading;
+- writing;
+- gramática;
+- vocabulário contextual;
+- revisão espaçada;
+- caderno de erros;
+- FluentIA Arcade;
+- cenários cotidianos, trabalho e EUA;
+- provas finais;
+- certificado interno;
+- PWA;
+- progresso local;
+- backup/importação;
+- núcleo educacional sem assinatura obrigatória.
 
-## Como o progresso é tratado
+## IA generativa opcional
 
-O FluentIA não considera XP ou presença como prova de domínio. O fluxo é:
+Para habilitar conversação generativa no backend:
 
-**ouvir → compreender → produzir → receber feedback → corrigir → recuperar da memória → aplicar → revisar → ser avaliado**
+```
+GEMINI_API_KEY=...
+GEMINI_MODEL=gemini-3.5-flash-lite
+```
 
-As provas finais combinam compreensão e produção. A progressão depende de evidência de aprendizagem, e não apenas de cliques.
+Sem essas variáveis, a Lia utiliza automaticamente o modo local. Nenhum segredo deve ser colocado no HTML ou JavaScript do navegador.
 
-## Lia e IA
-
-A Lia funciona como professora virtual, interface de prática, orientação e feedback.
-
-Na versão gratuita atual, a tela de conversação chama o endpoint seguro `/api/lia`. Ele possui validação de entrada, bloqueio básico de requisições cruzadas, limite de requisições e coaching local gratuito. Se o endpoint falhar, a atividade continua com fallback local sem perder o progresso.
-
-A Lia não possui autoridade para aprovar prova, liberar nível ou emitir certificado. Essa separação existe para evitar aprovação falsa causada por erro de IA ou indisponibilidade externa.
-
-## Fala e pronúncia
-
-O reconhecimento de fala depende do navegador/dispositivo. A pontuação representa evidência interna de inteligibilidade e execução da tarefa; ela não é medição clínica de sotaque e não promete transformar todo aluno em falante nativo.
-
-O objetivo é desenvolver comunicação avançada, natural, funcional e independente.
-
-## Certificado
-
-Após aprovação final no C2, o aluno pode gerar um **Certificado de Conquista Interna FluentIA**.
-
-Ele não é certificação CEFR oficial, diploma acadêmico, Cambridge, IELTS ou TOEFL.
-
-## Privacidade e segurança
-
-- sem chave de IA no cliente;
-- sem câmera ou geolocalização necessárias;
-- microfone somente mediante permissão;
-- progresso local por padrão;
-- endpoint da Lia com validação e rate limit básico;
-- headers de segurança no Vercel;
-- scan de segredos durante o build;
-- service worker ignora rotas `/api/`;
-- build valida sintaxe, integração da Lia 3D, manifesto e assets antes da publicação.
-
-## Build e validação
+## Build
 
 ```bash
 npm run verify
 ```
 
-A validação 6.6 inclui testes dedicados ao avatar e à interface para confirmar que escuta, fala, pensamento, correção, comemoração, home premium e atualização do PWA continuam conectados ao código.
+A verificação testa build, sintaxe da API, Lia, avatar e regras Speak First.
 
-## Compromisso de gratuidade
+## Compromisso
 
-O objetivo do projeto é oferecer uma rota de estudo séria para quem não pode pagar um curso. A trilha comunitária principal não exige assinatura obrigatória.
+A proposta do FluentIA é oferecer ensino útil para quem não pode pagar um curso, sem usar a gratuidade como desculpa para ensino superficial.
 
-Gratuito não significa promessa falsa: nenhum software pode garantir zero bugs, fluência em prazo fixo ou sotaque nativo para todas as pessoas. O compromisso é ensinar, medir de forma transparente, corrigir falhas e manter os critérios de aprovação honestos.
+Isso também significa não fazer promessas falsas. Nenhum aplicativo pode garantir sotaque nativo, fluência em prazo fixo ou ausência absoluta de bugs. O compromisso é exigir produção real, medir o que pode ser medido, informar limitações e manter a evolução transparente.
