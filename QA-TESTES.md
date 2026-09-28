@@ -1,4 +1,4 @@
-# QA e Testes — FluentIA 6.5
+# QA e Testes — FluentIA 7.0
 
 ## Regra de liberação
 
@@ -25,6 +25,20 @@ A release precisa manter:
 - comemoração após aprovação;
 - fallback de movimento reduzido;
 - rótulo acessível da personagem.
+
+## Speak First
+
+A release precisa garantir:
+- atividade de repetição oral dentro de cada unidade;
+- atividade final de transferência/fala livre;
+- navegador com reconhecimento de voz não pode concluir a unidade pulando a fala;
+- repetição oral >= 75%;
+- fala livre >= 70%;
+- feedback palavra por palavra;
+- reconhecimento com transcrição intermediária;
+- histórico de conversa persistente;
+- palavra salva da conversa entra no SRS;
+- jogos não substituem critérios de prova.
 
 ## Progressão
 - níveis começam bloqueados conforme a trilha;
