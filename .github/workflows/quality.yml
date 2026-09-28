@@ -1,0 +1,41 @@
+name: FluentIA Quality Gate
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    name: Build and verify
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+      - name: Setup Node
+        uses: actions/setup-node@v6
+        with:
+          node-version: "22"
+      - name: Verify production build
+        run: npm run verify
+      - name: Verify required production assets
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -f dist/index.html
+          test -f dist/app.js
+          test -f dist/styles.css
+          test -f dist/manifest.webmanifest
+          test -f dist/sw.js
+          test -f dist/assets/lia-3d.webp
+          test -f dist/icons/icon-192.png
+          test -f dist/icons/icon-512.png
+          grep -q "FluentIA" dist/index.html
+          grep -q "6.3.0" dist/build-info.json
+          echo "FluentIA quality gate passed."
