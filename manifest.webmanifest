@@ -1,0 +1,14 @@
+{
+  "name": "FluentIA — inglês na vida real",
+  "short_name": "FluentIA",
+  "description": "Plataforma gratuita de inglês do A0 ao C2 com prática ativa, Lia, fala, escuta, leitura, escrita, revisão e provas por nível.",
+  "lang": "pt-BR",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#08111f",
+  "theme_color": "#08111f",
+  "icons": [
+    {"src":"/icons/icon.svg","sizes":"any","type":"image/svg+xml","purpose":"any maskable"}
+  ]
+}

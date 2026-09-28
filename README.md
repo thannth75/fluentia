@@ -1,89 +1,79 @@
-# FluentIA 6.3 — Inglês na vida real
+# FluentIA 6.4 — inglês na vida real
 
-FluentIA é uma PWA gratuita de estudo de inglês, do A0 ao C2, com prática ativa, Lia 3D, conversação, listening, leitura, escrita, vocabulário, gramática, revisão espaçada e situações reais.
+FluentIA é uma plataforma gratuita e local-first para estudar inglês do A0/Pre-A1 ao C2 com prática ativa, fala, escuta, leitura, escrita, vocabulário, gramática, revisão espaçada, situações reais e a professora virtual Lia.
 
-## Método
+## O que a 6.4 entrega
 
-O ciclo principal é:
+- trilha A0/Pre-A1 → C2;
+- plano diário adaptativo;
+- Sprint prático de 12 minutos;
+- Shadowing para ouvir e repetir frases naturais;
+- conversação guiada com feedback;
+- pronúncia e reconhecimento de fala quando o navegador oferece suporte;
+- listening, ditado, leitura e escrita;
+- vocabulário e gramática contextualizados;
+- revisão espaçada e caderno de erros;
+- cenários cotidianos, EUA e trabalho;
+- provas finais por nível;
+- próxima faixa bloqueada até aprovação;
+- certificado interno de conquista após aprovação no C2;
+- PWA instalável e uso offline das partes locais após cache;
+- progresso salvo no dispositivo;
+- backup/importação de progresso;
+- sem assinatura obrigatória para concluir a trilha principal.
 
-**ouvir → compreender → produzir → receber feedback → revisar → usar em situação real**
+## Como o progresso é tratado
 
-O sistema adapta ritmo, duração e tipo de prática à preferência e ao desempenho do aluno. Não trata pessoas como presas a um “estilo de aprendizagem” fixo.
+O FluentIA não considera XP ou presença como prova de domínio. O fluxo é:
+
+**ouvir → compreender → produzir → receber feedback → corrigir → recuperar da memória → aplicar → revisar → ser avaliado**
+
+As provas finais combinam compreensão e produção. A intenção é tornar a progressão dependente de evidência de aprendizagem, e não apenas de cliques.
 
 ## Lia
 
-A Lia é a professora-avatar do FluentIA. Ela conduz missões, fala, escuta quando o navegador permite, reage a acertos/erros e orienta a prática.
+A Lia funciona como interface de prática, orientação e feedback.
 
-## Provas finais por nível
+Na versão gratuita atual, o núcleo permanece funcional sem API paga. O endpoint `/api/lia` possui validação de entrada, limite básico de requisições e respostas locais de coaching para que indisponibilidade de um provedor externo não derrube o curso.
 
-A0, A1, A2, B1, B2, C1 e C2 têm uma prova final obrigatória.
+O projeto não finge que esse fallback local é um LLM irrestrito. Um modelo generativo externo pode ser conectado futuramente por backend seguro, sem expor chaves no navegador e sem receber autoridade para aprovar provas ou emitir certificados.
 
-Para liberar a prova:
-- 100% das unidades do nível concluídas;
-- checkpoint interno de pelo menos 80%.
+## Fala e pronúncia
 
-Para ser aprovado:
-- leitura/compreensão >= 80%;
-- conversação >= 80% de média;
-- nenhuma resposta conversacional abaixo de 70%;
-- quando o navegador oferece reconhecimento de voz, pelo menos 2 das 3 respostas precisam ser produzidas pelo microfone.
+O reconhecimento de fala depende do navegador/dispositivo. A pontuação representa evidência interna de inteligibilidade e execução da tarefa; ela não é medição clínica de sotaque e não promete transformar todo aluno em falante nativo.
 
-A faixa seguinte continua bloqueada até a aprovação.
+O objetivo é desenvolver comunicação avançada, natural, funcional e independente.
 
-## Certificado de conquista
+## Certificado
 
-Após aprovação no C2, o FluentIA gera um **Certificado de Conquista Interna FluentIA** com nome, data, notas e ID local, pronto para impressão/PDF.
+Após aprovação final no C2, o aluno pode gerar um **Certificado de Conquista Interna FluentIA**.
 
-Esse certificado reconhece o mérito dentro do FluentIA. Ele **não é diploma acadêmico, certificação CEFR oficial, Cambridge, IELTS ou TOEFL**, e não representa promessa de sotaque perfeito ou equivalência automática a um falante nativo.
+Ele não é certificação CEFR oficial, diploma acadêmico, Cambridge, IELTS ou TOEFL.
 
-## Conteúdo
+## Privacidade e segurança
 
-- 98 unidades A0–C2;
-- prática de pronúncia, listening, leitura, escrita e conversação;
-- revisão espaçada e recuperação ativa;
-- Sprint Prático de 12 minutos;
-- cenários de mercado, restaurante, banco, saúde, transporte, telefone, escola, moradia, emergência, trabalho, entrevista, delivery, warehouse, TI, viagens e imigração;
-- modo EUA e inglês para trabalho;
-- progresso salvo localmente no navegador.
+- sem chave de IA no cliente;
+- sem câmera ou geolocalização necessárias;
+- microfone somente mediante permissão;
+- progresso local por padrão;
+- endpoint da Lia com validação e rate limit básico;
+- headers de segurança no Vercel;
+- scan de segredos durante o build;
+- service worker ignora rotas `/api/`;
+- build valida sintaxe, manifesto e assets antes da publicação.
 
-## Qualidade
+Consulte também `PRIVACIDADE.md`, `SEGURANCA.md`, `ACESSIBILIDADE.md`, `METODO-DE-ESTUDO.md` e `QA-TESTES.md`.
 
-A release 6.3 mantém a suíte principal com **60/60 verificações** e recebeu testes adicionais para:
-- bloqueio da prova;
-- reprovação sem evidência oral suficiente;
-- aprovação com leitura + conversação;
-- desbloqueio da próxima faixa somente após aprovação;
-- proteção do certificado C2.
+## Build
 
-## Produção
+```bash
+npm run verify
+```
 
-O Vercel está conectado à branch `main` deste repositório.
+O build da 6.4 é autocontido e não depende da antiga cadeia de patches históricos para gerar a aplicação principal.
 
-O build:
-1. reconstrói a base estável;
-2. verifica integridade SHA-256;
-3. aplica a release 6.3;
-4. verifica novamente os assets finais;
-5. publica apenas se todas as verificações passarem.
+## Compromisso de gratuidade
 
+O objetivo do projeto é oferecer uma rota de estudo séria para quem não pode pagar um curso. A trilha comunitária principal não exige assinatura obrigatória.
 
-
-## Projeto aberto e gratuito
-
-O FluentIA é distribuído com licença MIT e mantém a trilha educacional principal gratuita. Consulte:
-
-- `GRATUIDADE-E-ACESSO.md` — compromisso de acesso;
-- `METODO-DE-ESTUDO.md` — método pedagógico;
-- `QA-TESTES.md` — critérios de qualidade;
-- `PRIVACIDADE.md` — privacidade;
-- `ACESSIBILIDADE.md` — acessibilidade;
-- `SEGURANCA.md` — segurança;
-- `CONTRIBUTING.md` — como contribuir;
-- `SUPPORT.md` — suporte;
-- `ROADMAP.md` — evolução planejada.
-
-## Verificação
-
-A versão 6.3 foi validada localmente com build determinístico, integridade de dados, testes do service worker, smoke de desempenho e suíte de navegador.
-
-Em 28/09/2026, os workflows GitHub-hosted também foram configurados. Um workflow diagnóstico contendo apenas `echo` falhou antes de qualquer etapa iniciar (`steps: []`), assim como os demais workflows, indicando falha de provisionamento/infraestrutura do GitHub Actions e não falha do código do FluentIA. Os workflows permanecem no repositório para voltar a executar normalmente quando o serviço aceitar runners.
+Gratuito não significa promessa falsa: nenhum software pode garantir zero bugs, fluência em prazo fixo ou sotaque nativo para todas as pessoas. O compromisso é ensinar, medir de forma transparente, corrigir falhas e manter os critérios de aprovação honestos.
