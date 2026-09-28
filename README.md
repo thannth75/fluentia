@@ -66,3 +66,24 @@ O build:
 4. verifica novamente os assets finais;
 5. publica apenas se todas as verificações passarem.
 
+
+
+## Projeto aberto e gratuito
+
+O FluentIA é distribuído com licença MIT e mantém a trilha educacional principal gratuita. Consulte:
+
+- `GRATUIDADE-E-ACESSO.md` — compromisso de acesso;
+- `METODO-DE-ESTUDO.md` — método pedagógico;
+- `QA-TESTES.md` — critérios de qualidade;
+- `PRIVACIDADE.md` — privacidade;
+- `ACESSIBILIDADE.md` — acessibilidade;
+- `SEGURANCA.md` — segurança;
+- `CONTRIBUTING.md` — como contribuir;
+- `SUPPORT.md` — suporte;
+- `ROADMAP.md` — evolução planejada.
+
+## Verificação
+
+A versão 6.3 foi validada localmente com build determinístico, integridade de dados, testes do service worker, smoke de desempenho e suíte de navegador.
+
+Em 28/09/2026, os workflows GitHub-hosted também foram configurados. Um workflow diagnóstico contendo apenas `echo` falhou antes de qualquer etapa iniciar (`steps: []`), assim como os demais workflows, indicando falha de provisionamento/infraestrutura do GitHub Actions e não falha do código do FluentIA. Os workflows permanecem no repositório para voltar a executar normalmente quando o serviço aceitar runners.
