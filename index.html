@@ -97,6 +97,71 @@ body.light{--bg:#eef4fb;--bg-2:#f8fbff;--surface:#fff;--surface-2:#f5f9fd;--surf
 @media(max-width:700px){.lia-companion{right:10px;bottom:10px}.lia-companion-panel{width:min(280px,calc(100vw - 78px))}.lia-avatar3d.hero{--lia-scale:.82}}
 .reduce-motion .lia-avatar3d *{animation:none!important;transition:none!important}
 
+/* FLUENTIA_6_6_PREMIUM_UI */
+.hero-premium{min-height:440px;padding:0;display:grid;grid-template-columns:minmax(390px,1.05fr) minmax(330px,.9fr) 250px;overflow:hidden;position:relative;background:
+radial-gradient(circle at 58% 35%,rgba(44,139,255,.20),transparent 34%),
+linear-gradient(135deg,#0d2037 0%,#0b1b31 43%,#0d2340 100%)}
+.hero-premium:before{content:"";position:absolute;inset:0;background:
+linear-gradient(90deg,rgba(5,15,28,.18),transparent 42%,rgba(5,15,28,.10)),
+repeating-linear-gradient(90deg,rgba(255,255,255,.012) 0 1px,transparent 1px 52px);pointer-events:none}
+.hero-copy-premium{padding:42px 0 38px 38px;position:relative;z-index:3;display:flex;flex-direction:column;justify-content:center}
+.hero-copy-premium h1{font-size:42px;line-height:1.02;max-width:610px;margin:12px 0 13px;letter-spacing:-.035em}
+.hero-copy-premium p{max-width:590px;color:#9fb3cc;font-size:14px;line-height:1.65}
+.hero-copy-premium .hero-actions{margin-top:22px}
+.hero-microstats{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px}
+.hero-microstats span{padding:8px 10px;border:1px solid rgba(105,157,210,.23);border-radius:11px;background:rgba(10,29,49,.72);font-size:10px;color:#a9bfd7}
+.hero-microstats b{color:#fff}
+.lia-hero-stage{position:relative;z-index:2;display:flex;align-items:flex-end;justify-content:center;min-height:440px;overflow:hidden}
+.lia-hero-stage:after{content:"";position:absolute;left:9%;right:9%;bottom:18px;height:42px;border-radius:50%;background:radial-gradient(ellipse,rgba(0,0,0,.42),transparent 70%);filter:blur(7px);z-index:-1}
+.lia-live-card{position:relative;z-index:3;margin:24px 20px 24px 0;padding:16px;background:rgba(7,20,36,.78);backdrop-filter:blur(16px);border:1px solid rgba(75,144,214,.25);border-radius:18px;align-self:stretch;display:flex;flex-direction:column;justify-content:center}
+.lia-live-card>small{font-size:9px;color:#6fb3ff;letter-spacing:.14em;font-weight:900;margin-bottom:10px}
+.lia-state-rail{display:grid;gap:8px}.lia-state-item{display:grid;grid-template-columns:33px 1fr;gap:9px;align-items:center;padding:10px;border-radius:12px;border:1px solid #1c3856;background:rgba(13,35,57,.72);opacity:.57;transition:.2s}
+.lia-state-item.active{opacity:1;border-color:#2d91ff;background:linear-gradient(135deg,rgba(38,136,255,.24),rgba(47,212,209,.08));box-shadow:0 0 0 1px rgba(45,145,255,.12),0 10px 22px rgba(0,0,0,.14)}
+.lia-state-icon{width:33px;height:33px;border-radius:10px;display:grid;place-items:center;background:#102a45;font-size:15px}.lia-state-item.active .lia-state-icon{background:linear-gradient(135deg,#157bff,#25bdd7)}
+.lia-state-item b{display:block;font-size:10px}.lia-state-item small{display:block;color:#7992ad;font-size:8px;margin-top:2px}
+.quick-grid-premium{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:12px}.quick-grid-premium .skill-card{min-height:112px;flex-direction:column;align-items:flex-start;justify-content:flex-start}.quick-grid-premium .skill-card em{position:absolute;right:14px;bottom:12px}.quick-grid-premium .skill-card{position:relative}.quick-grid-premium .skill-card>span{width:43px;height:43px}
+.home-level-track{display:grid;grid-template-columns:repeat(7,1fr);gap:8px;margin-top:18px}.home-level-node{text-align:center;position:relative}.home-level-node:before{content:"";position:absolute;height:3px;background:#21415f;left:-50%;right:50%;top:20px;z-index:0}.home-level-node:first-child:before{display:none}.home-level-node.done:before,.home-level-node.current:before{background:linear-gradient(90deg,#2fd4d1,#2688ff)}.home-level-node i{position:relative;z-index:1;margin:auto;width:41px;height:41px;border-radius:50%;display:grid;place-items:center;font-style:normal;font-weight:850;font-size:11px;background:#10263f;border:2px solid #284b6c;color:#9db3ca}.home-level-node.done i{background:linear-gradient(135deg,#20bb75,#3bdca0);border-color:transparent;color:#052919}.home-level-node.current i{background:linear-gradient(135deg,#2688ff,#695dff);border-color:#66b2ff;color:#fff;box-shadow:0 0 0 5px rgba(38,136,255,.09)}.home-level-node small{display:block;font-size:8px;color:#758ca6;margin-top:6px}
+.mission-card{padding:25px;display:grid;grid-template-columns:1.15fr .85fr;gap:18px}.mission-main{display:flex;flex-direction:column;justify-content:center}.mission-main h2{margin:6px 0 7px}.mission-main p{margin:0;color:var(--muted);font-size:11px;line-height:1.55}.mission-side{border:1px solid #203d5b;border-radius:17px;padding:16px;background:linear-gradient(145deg,#0d2239,#0a1b2e);display:grid;align-content:center;gap:8px}.mission-side span{font-size:10px;color:#8aa3be}.mission-side strong{font-size:25px}.mission-side small{color:var(--muted);line-height:1.4}
+.real-life-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin-top:15px}.real-life-grid button{min-height:74px;border:1px solid #23435f;background:linear-gradient(145deg,#0e2339,#0b1b2e);border-radius:14px;color:#dfeeff;text-align:left;padding:12px}.real-life-grid b{display:block;font-size:11px}.real-life-grid small{display:block;color:#7890aa;font-size:8px;margin-top:4px}
+
+/* Lia 6.6 — interactive vector 3D, no static portrait asset */
+.lia-avatar3d.lia-v2{--look-x:0px;--look-y:0px;position:relative;display:grid;place-items:center;min-height:230px;isolation:isolate;perspective:900px}
+.lia-v2 .lia-stage-v2{width:250px;height:300px;position:relative;display:grid;place-items:end center;transform-style:preserve-3d;filter:drop-shadow(0 25px 24px rgba(0,0,0,.34));transition:transform .18s ease}
+.lia-v2.hero{width:100%;height:100%;min-height:430px}.lia-v2.hero .lia-stage-v2{width:360px;height:430px}
+.lia-v2.panel .lia-stage-v2{width:230px;height:285px}.lia-v2.modal .lia-stage-v2{width:210px;height:250px}
+.lia-v2.mini{min-height:52px;width:52px;height:52px;overflow:hidden}.lia-v2.mini .lia-stage-v2{width:62px;height:72px;transform:translateY(14px)}.lia-v2.mini .lia-status-v2{display:none}
+.lia-v2 .lia-aura-v2{position:absolute;left:50%;top:50%;width:82%;aspect-ratio:1;border-radius:50%;transform:translate(-50%,-48%) translateZ(-50px);background:radial-gradient(circle,rgba(54,161,255,.30),rgba(126,91,255,.09) 46%,transparent 72%);filter:blur(7px);animation:liaAuraV2 3s ease-in-out infinite}
+.lia-v2 svg{width:100%;height:100%;overflow:visible;transform:rotateY(calc(var(--look-x) * .24)) rotateX(calc(var(--look-y) * -.16));transition:transform .14s ease;transform-style:preserve-3d}
+.lia-v2 .lia-head-v2{transform-origin:180px 148px;animation:liaHeadIdle 4.6s ease-in-out infinite}
+.lia-v2 .lia-pupil-v2{transform:translate(var(--look-x),var(--look-y));transition:transform .11s ease}
+.lia-v2 .lia-eye-lid-v2{transform-origin:center;animation:liaBlinkV2 5.4s infinite}
+.lia-v2 .lia-mouth-v2{transform-origin:180px 208px;transition:.14s}
+.lia-v2 .lia-cheek-v2{opacity:.32;transition:.2s}
+.lia-v2 .lia-spark-v2{opacity:0;transform-origin:center}
+.lia-v2 .lia-listen-ring-v2{opacity:0;transform-origin:center}
+.lia-status-v2{position:absolute;left:50%;bottom:4px;transform:translateX(-50%);z-index:8;display:flex;align-items:center;gap:7px;white-space:nowrap;padding:7px 10px;border-radius:999px;background:rgba(5,16,29,.88);border:1px solid rgba(94,156,219,.32);font-size:9px;color:#cfe0ef;box-shadow:0 8px 20px rgba(0,0,0,.22);backdrop-filter:blur(12px)}
+.lia-status-v2 i{width:7px;height:7px;border-radius:50%;background:#40dc87;box-shadow:0 0 0 4px rgba(64,220,135,.11)}
+.lia-v2[data-mood="listening"] .lia-listen-ring-v2{opacity:1;animation:liaListenRing 1.05s ease-out infinite}.lia-v2[data-mood="listening"] .lia-status-v2 i{background:#2fd4d1}
+.lia-v2[data-mood="thinking"] .lia-head-v2{animation:liaThinkV2 1.8s ease-in-out infinite}.lia-v2[data-mood="thinking"] .lia-status-v2 i{background:#a978ff}.lia-v2[data-mood="thinking"] .lia-brow-left-v2{transform:translateY(-2px) rotate(6deg)}
+.lia-v2[data-mood="speaking"] .lia-mouth-v2{animation:liaTalkV2 .18s ease-in-out infinite alternate}.lia-v2[data-mood="speaking"] .lia-head-v2{animation:liaSpeakV2 .55s ease-in-out infinite alternate}.lia-v2[data-mood="speaking"] .lia-status-v2 i{background:#49a3ff}
+.lia-v2[data-mood="correcting"] .lia-brow-left-v2{transform:translateY(-2px) rotate(9deg)}.lia-v2[data-mood="correcting"] .lia-brow-right-v2{transform:translateY(2px) rotate(9deg)}.lia-v2[data-mood="correcting"] .lia-status-v2 i{background:#ff9a55}
+.lia-v2[data-mood="happy"] .lia-mouth-v2,.lia-v2[data-mood="celebrate"] .lia-mouth-v2{transform:scaleY(1.16) scaleX(1.08)}.lia-v2[data-mood="happy"] .lia-cheek-v2,.lia-v2[data-mood="celebrate"] .lia-cheek-v2{opacity:.68}
+.lia-v2[data-mood="celebrate"] .lia-stage-v2{animation:liaCelebrateV2 .65s cubic-bezier(.2,.8,.2,1) infinite alternate}.lia-v2[data-mood="celebrate"] .lia-spark-v2{opacity:1;animation:liaSparkV2 1.1s ease-in-out infinite alternate}.lia-v2[data-mood="celebrate"] .lia-status-v2 i{background:#ffd75e}
+.lia-v2[data-mood="coach"] .lia-head-v2{transform:rotate(3deg)}.lia-v2[data-mood="coach"] .lia-status-v2 i{background:#ffd75e}
+@keyframes liaAuraV2{0%,100%{opacity:.55;transform:translate(-50%,-48%) scale(.95)}50%{opacity:1;transform:translate(-50%,-48%) scale(1.06)}}
+@keyframes liaBlinkV2{0%,47%,50%,100%{transform:scaleY(1)}48.5%{transform:scaleY(.08)}}
+@keyframes liaHeadIdle{0%,100%{transform:rotate(-1deg) translateY(0)}50%{transform:rotate(1.5deg) translateY(-2px)}}
+@keyframes liaThinkV2{0%,100%{transform:rotate(-4deg) translateY(0)}50%{transform:rotate(1deg) translateY(-2px)}}
+@keyframes liaSpeakV2{from{transform:rotate(-.8deg) translateY(0)}to{transform:rotate(.8deg) translateY(-2px)}}
+@keyframes liaTalkV2{from{transform:scaleY(.55) scaleX(.96)}to{transform:scaleY(1.38) scaleX(1.04)}}
+@keyframes liaListenRing{0%{transform:scale(.68);opacity:.8}100%{transform:scale(1.26);opacity:0}}
+@keyframes liaCelebrateV2{from{transform:translateY(0)}to{transform:translateY(-9px)}}
+@keyframes liaSparkV2{from{transform:scale(.7) rotate(-8deg)}to{transform:scale(1.15) rotate(8deg)}}
+@media(max-width:1200px){.hero-premium{grid-template-columns:1fr 330px}.lia-live-card{display:none}.quick-grid-premium{grid-template-columns:repeat(4,1fr)}}
+@media(max-width:820px){.hero-premium{grid-template-columns:1fr;min-height:auto}.hero-copy-premium{padding:27px 23px 10px}.hero-copy-premium h1{font-size:31px}.lia-hero-stage{min-height:330px}.lia-v2.hero{min-height:330px}.lia-v2.hero .lia-stage-v2{width:285px;height:330px}.quick-grid-premium{grid-template-columns:repeat(2,1fr)}.mission-card{grid-template-columns:1fr}.real-life-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:520px){.quick-grid-premium{grid-template-columns:1fr 1fr}.home-level-track{grid-template-columns:repeat(7,44px);overflow:auto;padding-bottom:8px}.hero-microstats{gap:6px}.hero-microstats span{font-size:9px}}
+.reduce-motion .lia-v2 *{animation:none!important;transition:none!important}
+
 </style>
 </head>
 <body>
@@ -441,7 +506,7 @@ body.light{--bg:#eef4fb;--bg-2:#f8fbff;--surface:#fff;--surface-2:#f5f9fd;--surf
   const $$ = (s, root=document) => [...root.querySelectorAll(s)];
   const STORAGE_KEY='fluentia.v4.progress';
   const OLD_STORAGE_KEYS=['fluentia.v3.progress','fluentia.v2.progress'];
-  const APP_VERSION='6.5.0';
+  const APP_VERSION='6.6.0';
   const LEVELS=['A0','A1','A2','B1','B2','C1','C2'];
   const SKILL_LABELS={vocabulary:'Vocabulário',grammar:'Gramática',pronunciation:'Pronúncia',conversation:'Conversação',listening:'Listening',reading:'Leitura',writing:'Escrita'};
   const levelRank=l=>Math.max(0,LEVELS.indexOf(l));
@@ -656,19 +721,62 @@ body.light{--bg:#eef4fb;--bg-2:#f8fbff;--surface:#fff;--surface-2:#f5f9fd;--surf
 
   let liaMood='idle',liaStatus='Pronta para praticar';
   const LIA_LABELS={idle:'Pronta para praticar',listening:'Estou ouvindo você',thinking:'Pensando na sua resposta',speaking:'Falando com você',correcting:'Vamos corrigir juntos',happy:'Muito bem!',celebrate:'Conquista desbloqueada!',coach:'Tente mais uma vez'};
+  const LIA_STATES=[
+    ['speaking','▥','Falando','Lia está falando com você'],
+    ['listening','◉','Ouvindo','Aguardando sua fala'],
+    ['thinking','✦','Pensando','Analisando sua resposta'],
+    ['happy','☺','Incentivando','Reforçando seu progresso'],
+    ['correcting','✎','Corrigindo','Mostrando como melhorar']
+  ];
   function liaAvatarHtml(context='panel'){
     const status=esc(liaStatus||LIA_LABELS[liaMood]||LIA_LABELS.idle);
-    return '<div class="lia-avatar3d '+context+'" data-lia-avatar data-mood="'+esc(liaMood)+'" role="img" aria-label="Lia, professora virtual 3D interativa">'
-      +'<div class="lia-scene"><div class="lia-halo3d"></div><div class="lia-rig3d">'
-      +'<div class="lia-hair-back3d"></div><div class="lia-arm3d left"></div><div class="lia-arm3d right"></div><div class="lia-torso3d"><div class="lia-jacket3d"></div><div class="lia-badge3d">LIA</div></div><div class="lia-neck3d"></div>'
-      +'<div class="lia-head3d"><div class="lia-hair-front3d"></div><div class="lia-ear3d left"></div><div class="lia-ear3d right"></div>'
-      +'<div class="lia-brow3d left"></div><div class="lia-brow3d right"></div><div class="lia-eye3d left"><i class="lia-pupil3d"></i></div><div class="lia-eye3d right"><i class="lia-pupil3d"></i></div><div class="lia-nose3d"></div><div class="lia-cheek3d left"></div><div class="lia-cheek3d right"></div><div class="lia-mouth3d"></div></div>'
-      +'</div><div class="lia-status3d" aria-live="polite"><i></i><span data-lia-status>'+status+'</span></div></div></div>';
+    return '<div class="lia-avatar3d lia-v2 '+esc(context)+'" data-lia-avatar data-mood="'+esc(liaMood)+'" role="img" aria-label="Lia, professora virtual 3D interativa">'
+      +'<div class="lia-stage-v2"><div class="lia-aura-v2"></div>'
+      +'<svg viewBox="0 0 360 430" aria-hidden="true" focusable="false"><defs>'
+      +'<linearGradient id="liaSkin" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffd9c0"/><stop offset=".48" stop-color="#efb08d"/><stop offset="1" stop-color="#c97765"/></linearGradient>'
+      +'<linearGradient id="liaSkinHi" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#ffe2ca"/><stop offset="1" stop-color="#e59b7c"/></linearGradient>'
+      +'<linearGradient id="liaHair" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#4c271f"/><stop offset=".45" stop-color="#261821"/><stop offset="1" stop-color="#100e18"/></linearGradient>'
+      +'<linearGradient id="liaHairHi" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#8d4a2d"/><stop offset=".42" stop-color="#3c201f"/><stop offset="1" stop-color="#17111a"/></linearGradient>'
+      +'<linearGradient id="liaShirt" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#132d4b"/><stop offset=".58" stop-color="#0c1b31"/><stop offset="1" stop-color="#071321"/></linearGradient>'
+      +'<radialGradient id="liaIris"><stop offset="0" stop-color="#74e8ef"/><stop offset=".35" stop-color="#3184a8"/><stop offset=".75" stop-color="#173f58"/><stop offset="1" stop-color="#08131e"/></radialGradient>'
+      +'<filter id="liaShadow" x="-50%" y="-50%" width="200%" height="200%"><feDropShadow dx="0" dy="11" stdDeviation="11" flood-color="#000" flood-opacity=".34"/></filter>'
+      +'</defs>'
+      +'<g class="lia-spark-v2"><path d="M63 100l5 13 13 5-13 5-5 13-5-13-13-5 13-5 5-13Z" fill="#ffd75e"/><path d="M299 76l4 10 10 4-10 4-4 10-4-10-10-4 10-4 4-10Z" fill="#64ddff"/></g>'
+      +'<g class="lia-listen-ring-v2" fill="none" stroke="#2fd4d1" stroke-width="4"><circle cx="180" cy="164" r="105"/><circle cx="180" cy="164" r="119" opacity=".45"/></g>'
+      +'<g filter="url(#liaShadow)">'
+      +'<path d="M88 424c6-91 42-132 92-132s87 39 94 132H88Z" fill="url(#liaShirt)"/><path d="M111 424c4-66 24-100 69-103 45 3 66 36 69 103H111Z" fill="#0a192b" opacity=".55"/>'
+      +'<path d="M139 300c3-21 3-36 2-47h78c-2 14-1 30 3 48-23 18-60 18-83-1Z" fill="url(#liaSkinHi)"/>'
+      +'<path d="M74 133c1-74 41-117 106-117 67 0 108 45 108 120 0 42-8 91-31 131-17 30-43 47-77 47-35 0-62-18-79-49-21-39-28-88-27-132Z" fill="url(#liaHair)"/>'
+      +'<path d="M88 168c0-74 35-126 92-126 57 0 92 51 92 126 0 68-32 119-92 119-60 0-92-51-92-119Z" fill="url(#liaSkin)"/>'
+      +'<g class="lia-head-v2">'
+      +'<ellipse cx="82" cy="172" rx="15" ry="24" fill="#df9478"/><ellipse cx="278" cy="172" rx="15" ry="24" fill="#df9478"/>'
+      +'<path d="M85 139c6-76 48-112 99-108 44 3 76 27 91 77-18-12-43-20-69-22-34-3-71 3-121 53Z" fill="url(#liaHairHi)"/>'
+      +'<path d="M92 132c26-55 67-82 116-75-41 12-69 37-83 70-10 24-12 52-8 77-20-15-31-39-25-72Z" fill="#5d3025" opacity=".62"/>'
+      +'<path class="lia-brow-left-v2" d="M122 144c14-8 29-8 43-1" fill="none" stroke="#493027" stroke-width="7" stroke-linecap="round"/><path class="lia-brow-right-v2" d="M198 143c14-7 29-6 42 2" fill="none" stroke="#493027" stroke-width="7" stroke-linecap="round"/>'
+      +'<g><ellipse cx="145" cy="167" rx="25" ry="16" fill="#fff9f5"/><ellipse cx="216" cy="167" rx="25" ry="16" fill="#fff9f5"/><g class="lia-pupil-v2"><circle cx="148" cy="168" r="10" fill="url(#liaIris)"/><circle cx="219" cy="168" r="10" fill="url(#liaIris)"/><circle cx="148" cy="168" r="4.5" fill="#07131e"/><circle cx="219" cy="168" r="4.5" fill="#07131e"/><circle cx="144" cy="164" r="2.6" fill="#fff"/><circle cx="215" cy="164" r="2.6" fill="#fff"/></g><g class="lia-eye-lid-v2"><path d="M120 164c13-15 36-16 50 0" fill="none" stroke="#5b332d" stroke-width="3"/><path d="M191 164c13-15 36-16 50 0" fill="none" stroke="#5b332d" stroke-width="3"/></g></g>'
+      +'<path d="M180 171c-2 15-5 28-10 37 6 5 14 6 21 1" fill="none" stroke="#b56f64" stroke-width="3" stroke-linecap="round"/>'
+      +'<ellipse class="lia-cheek-v2" cx="126" cy="204" rx="24" ry="11" fill="#f27486"/><ellipse class="lia-cheek-v2" cx="236" cy="204" rx="24" ry="11" fill="#f27486"/>'
+      +'<g class="lia-mouth-v2"><path d="M148 218c19 13 45 14 65 0-8 18-23 27-33 27-11 0-25-9-32-27Z" fill="#8f3042"/><path d="M153 220c16 5 38 5 55 0-8 8-18 11-28 11s-20-3-27-11Z" fill="#f6c4bd" opacity=".88"/></g>'
+      +'<path d="M92 141c-11 43-6 91 11 128-19-13-31-42-34-79-3-36 4-66 23-91V141Z" fill="#2c1a1d"/><path d="M268 128c13 34 14 79-4 126 24-21 32-56 29-91-3-32-12-55-30-74l5 39Z" fill="#1b131a"/>'
+      +'</g>'
+      +'<path d="M112 347c18-20 41-31 68-31s51 11 69 31c-13 21-38 34-69 34-31 0-55-13-68-34Z" fill="#132c49" opacity=".7"/>'
+      +'<path d="M252 333c19 7 33 22 43 44 7 17 9 33 8 47h-44c1-27-2-50-17-69l10-22Z" fill="#10253e"/><path d="M111 333c-19 7-33 22-43 44-7 17-9 33-8 47h44c-1-27 2-50 17-69l-10-22Z" fill="#10253e"/>'
+      +'<circle cx="180" cy="352" r="14" fill="#2fd4d1" opacity=".92"/><text x="180" y="356" text-anchor="middle" font-size="10" font-weight="900" fill="#05202a">LIA</text>'
+      +'</g></svg>'
+      +'<div class="lia-status-v2" aria-live="polite"><i></i><span data-lia-status>'+status+'</span></div></div></div>';
+  }
+  function liaStateRailHtml(){
+    return '<div class="lia-state-rail">'+LIA_STATES.map(([m,ic,t,sub])=>'<div class="lia-state-item '+(liaMood===m?'active':'')+'" data-lia-state="'+m+'"><span class="lia-state-icon">'+ic+'</span><div><b>'+t+'</b><small>'+sub+'</small></div></div>').join('')+'</div>';
+  }
+  function syncLiaUi(){
+    document.querySelectorAll('[data-lia-state]').forEach(el=>el.classList.toggle('active',el.dataset.liaState===liaMood));
+    const bubble=document.querySelector('[data-lia-hero-message]');if(bubble)bubble.textContent=liaStatus;
   }
   function setLiaMood(mood='idle',message=''){
     liaMood=LIA_LABELS[mood]?mood:'idle';liaStatus=message||LIA_LABELS[liaMood];
     document.querySelectorAll('[data-lia-avatar]').forEach(el=>{el.dataset.mood=liaMood;const status=el.querySelector('[data-lia-status]');if(status)status.textContent=liaStatus;});
     const live=document.getElementById('liaCompanionText');if(live)live.textContent=liaStatus;
+    syncLiaUi();
   }
   function ensureLiaCompanion(){
     if(document.getElementById('liaCompanion'))return;
@@ -681,24 +789,39 @@ body.light{--bg:#eef4fb;--bg-2:#f8fbff;--surface:#fff;--surface-2:#f5f9fd;--surf
 
   function skillBarsHtml(){return Object.entries(SKILL_LABELS).map(([k,v])=>`<div class="skill-bar"><div class="row"><span>${v}</span><b>${state.scores[k]||0}%</b></div><div class="track"><i style="width:${state.scores[k]||0}%"></i></div></div>`).join('');}
   function renderHome(){
-    setPage('Seu inglês, todos os dias','FLUENTIA · APRENDIZADO REAL');
+    setPage('Inglês na vida real','FLUENTIA · APRENDIZADO REAL');
     const n=nextLesson(),due=dueCards().length,[wk,wv]=weakSkill(),done=completedCount(),total=allLessons().length,goal=studyGoalPct();
-    $('#view').innerHTML=`<div class="dashboard-grid">
-      <section class="hero card span-8"><div class="hero-content"><span class="eyebrow"><span class="live-dot"></span> PLANO DE HOJE</span><h1>${esc(state.name||'Estudante')}, seu inglês precisa sair da tela e virar habilidade.</h1><p>Estude, ouça, fale, escreva e revise. O sistema acompanha o que você domina e o que ainda precisa voltar.</p><div class="hero-progress"><div class="progress-head"><span>Meta diária</span><strong>${state.todayXp} / ${state.dailyGoal} XP</strong></div><div class="progress"><i style="width:${goal}%"></i></div></div><div class="hero-actions"><button class="primary large" data-route="practice">⚡ Fazer plano diário</button><button class="secondary large" data-lesson="${n.id}">▶ Próxima aula</button></div></div><div class="coach-card">${liaAvatarHtml('hero')}<div class="speech-bubble"><small>Diagnóstico</small><strong>${due?`${due} revisões vencidas`:'Revisões em dia'}</strong><span>Foco fraco atual: ${SKILL_LABELS[wk]} (${wv}%).</span></div></div></section>
-      <section class="card streak-card span-4"><div class="section-head"><div><small>PROGRESSO REAL</small><h2>${done}/${total} unidades</h2></div><span class="score-badge">${state.level}</span></div><div class="metric-stack"><div><span>Revisões vencidas</span><b>${due}</b></div><div><span>Erros ativos</span><b>${state.errors.filter(e=>!e.resolved).length}</b></div><div><span>Tempo estudado</span><b>${studiedMinutes()} min</b></div></div><button class="secondary full" data-route="progress">Ver diagnóstico completo →</button></section>
-      <section class="span-12 section-label"><div><small>TREINO POR HABILIDADE</small><h2>Pratique o que transforma conhecimento em uso real</h2></div></section>
-      <section class="quick-grid span-12">
-        <button class="skill-card cyan" data-route="talk"><span>💬</span><div><b>Conversação</b><small>Role-play + correções</small></div><em>→</em></button>
-        <button class="skill-card purple" data-route="pronunciation"><span>🎙</span><div><b>Pronúncia</b><small>Fale e compare inteligibilidade</small></div><em>→</em></button>
-        <button class="skill-card orange" data-route="listening"><span>🎧</span><div><b>Listening</b><small>Ouça sem legenda</small></div><em>→</em></button>
-        <button class="skill-card green" data-route="writing"><span>✍</span><div><b>Escrita</b><small>Produza frases e textos</small></div><em>→</em></button>
-      </section>
-      <section class="card span-7"><div class="section-head"><div><small>PRÓXIMA UNIDADE</small><h2>${esc(n.title)}</h2></div><span class="score-badge">${n.level}</span></div><div class="lesson-preview"><div class="lesson-number">${n.level}</div><div class="copy"><h3>${esc(n.focus)}</h3><p><b>Estrutura:</b> ${esc(n.grammar)}<br><b>Modelo:</b> ${esc(n.en)}</p><div class="meta"><span>7 atividades</span><span>fala + escuta + escrita</span><span>revisão SRS</span></div></div><button class="primary" data-lesson="${n.id}">Começar</button></div></section>
-      <section class="card span-5"><div class="section-head"><div><small>MAPA DE HABILIDADES</small><h2>Onde melhorar agora</h2></div></div><div class="skill-bars">${skillBarsHtml()}</div></section>
-      <section class="card span-4 feature-tile"><span>⌨</span><h3>Ditado</h3><p>Transforme som em escrita e descubra o que seu ouvido está perdendo.</p><button class="text-button" data-route="dictation">Treinar →</button></section>
-      <section class="card span-4 feature-tile"><span>▧</span><h3>Leitura contextual</h3><p>Textos progressivos com compreensão, vocabulário e inferência.</p><button class="text-button" data-route="reading">Ler →</button></section>
-      <section class="card span-4 feature-tile"><span>!</span><h3>Caderno de erros</h3><p>Seus erros não somem: eles voltam até deixarem de ser erros.</p><button class="text-button" data-route="errors">Revisar →</button></section>
-    </div>`;
+    const passedLevels=LEVELS.filter(levelExamPassed).length;
+    const greeting=(new Date().getHours()<12?'Bom dia':new Date().getHours()<18?'Boa tarde':'Boa noite');
+    $('#view').innerHTML='<div class="dashboard-grid">'
+      +'<section class="hero-premium card span-12">'
+        +'<div class="hero-copy-premium"><span class="eyebrow"><span class="live-dot"></span> FLUENTIA · INGLÊS NA VIDA REAL</span>'
+          +'<h1>'+greeting+', '+esc(state.name||'Estudante')+'!<br>Vamos usar inglês hoje?</h1>'
+          +'<p>Aprenda de forma prática: converse, ouça, repita, escreva, corrija e use o idioma em situações reais. A Lia acompanha seu desempenho e muda o treino conforme o que você ainda precisa dominar.</p>'
+          +'<div class="hero-actions"><button class="primary large" data-route="talk">🎙 Conversar agora com a Lia</button><button class="secondary large" data-route="practice">⚡ Fazer plano diário</button></div>'
+          +'<div class="hero-microstats"><span><b>'+state.level+'</b> nível atual</span><span><b>'+goal+'%</b> meta de hoje</span><span><b>'+due+'</b> revisões</span><span><b>'+passedLevels+'/7</b> provas aprovadas</span></div>'
+        +'</div>'
+        +'<div class="lia-hero-stage">'+liaAvatarHtml('hero')+'<div class="speech-bubble" style="position:absolute;right:6%;top:20%;max-width:205px"><small>LIA</small><strong>Estou com você.</strong><span data-lia-hero-message>'+esc(liaStatus)+'</span></div></div>'
+        +'<aside class="lia-live-card"><small>LIA ESTÁ AGORA…</small>'+liaStateRailHtml()+'<button class="secondary full" style="margin-top:12px" data-route="talk">Abrir conversa →</button></aside>'
+      +'</section>'
+      +'<section class="quick-grid-premium span-12">'
+        +'<button class="skill-card cyan" data-route="talk"><span>💬</span><div><b>Conversação</b><small>Conversa guiada + correção</small></div><em>→</em></button>'
+        +'<button class="skill-card purple" data-route="pronunciation"><span>🎙</span><div><b>Pronúncia</b><small>Fale, ouça e repita</small></div><em>→</em></button>'
+        +'<button class="skill-card orange" data-route="listening"><span>🎧</span><div><b>Listening</b><small>Entenda fala natural</small></div><em>→</em></button>'
+        +'<button class="skill-card green" data-route="vocabulary"><span>📖</span><div><b>Vocabulário</b><small>Palavras em contexto</small></div><em>→</em></button>'
+        +'<button class="skill-card cyan" data-route="grammar"><span>▤</span><div><b>Gramática</b><small>Estrutura aplicada</small></div><em>→</em></button>'
+        +'<button class="skill-card orange" data-route="usa"><span>🇺🇸</span><div><b>Inglês para os EUA</b><small>Vida, trabalho e viagem</small></div><em>→</em></button>'
+        +'<button class="skill-card purple" data-route="review"><span>🎯</span><div><b>Revisar</b><small>SRS + caderno de erros</small></div><em>→</em></button>'
+      +'</section>'
+      +'<section class="card span-5" style="padding:24px"><div class="section-head"><div><small>MEU PROGRESSO</small><h2>'+state.level+' · '+levelName(state.level)+'</h2></div><span class="score-badge">'+done+'/'+total+'</span></div><div class="skill-bars">'+skillBarsHtml()+'</div><button class="text-button" data-route="progress">Ver diagnóstico completo →</button></section>'
+      +'<section class="card span-7 mission-card"><div class="mission-main"><span class="mini-label">MISSÃO DE HOJE</span><h2>'+esc(n.title)+'</h2><p>'+esc(n.focus)+' · '+esc(n.grammar)+'. A missão mistura compreensão, produção e recuperação ativa para você não apenas reconhecer a resposta.</p><div class="hero-actions" style="margin-top:17px"><button class="primary" data-lesson="'+n.id+'">Começar missão</button><button class="secondary" data-route="sprint">Sprint 12 min</button></div></div><div class="mission-side"><span>PRÓXIMO PASSO</span><strong>'+n.level+'</strong><small>'+esc(n.en)+'</small><span>'+Math.max(0,state.dailyGoal-state.todayXp)+' XP restantes na meta</span></div></section>'
+      +'<section class="card span-7" style="padding:24px"><div class="section-head"><div><small>TRILHA DE APRENDIZADO</small><h2>Cada nível exige domínio real</h2></div><button class="text-button" data-route="path">Ver trilha completa →</button></div><div class="home-level-track">'+LEVELS.map(l=>'<div class="home-level-node '+(levelExamPassed(l)?'done':l===state.level?'current':'')+'"><i>'+(levelExamPassed(l)?'✓':l)+'</i><small>'+levelName(l)+'</small></div>').join('')+'</div><div class="tip-box" style="margin-top:18px"><span>🎓</span><p><strong>Sem aprovação automática.</strong><br>Cada faixa termina em prova de compreensão e conversação. O C2 libera o certificado interno de conquista somente depois da aprovação.</p></div></section>'
+      +'<section class="card span-5" style="padding:24px"><div class="section-head"><div><small>SITUAÇÕES REAIS</small><h2>Treine para o mundo fora da tela</h2></div></div><div class="real-life-grid"><button data-route="usa"><b>✈ Aeroporto</b><small>check-in e imigração</small></button><button data-route="talk"><b>🛒 Supermercado</b><small>compras e dúvidas</small></button><button data-route="talk"><b>🍽 Restaurante</b><small>pedido e conversa</small></button><button data-route="work"><b>💼 Entrevista</b><small>carreira e respostas</small></button><button data-route="usa"><b>🏠 Moradia</b><small>aluguel e rotina</small></button><button data-route="usa"><b>🏥 Saúde</b><small>consulta e farmácia</small></button></div></section>'
+      +'<section class="card span-4 feature-tile"><span>🗣</span><h3>Shadowing</h3><p>Escute uma fala natural e acompanhe o ritmo para desenvolver fluidez e inteligibilidade.</p><button class="text-button" data-route="shadowing">Praticar →</button></section>'
+      +'<section class="card span-4 feature-tile"><span>⌨</span><h3>Ditado ativo</h3><p>Transforme som em escrita para descobrir exatamente o que seu ouvido ainda perde.</p><button class="text-button" data-route="dictation">Treinar →</button></section>'
+      +'<section class="card span-4 feature-tile"><span>✓</span><h3>Provas e certificado</h3><p>Comprove leitura, compreensão e produção antes de liberar a próxima faixa.</p><button class="text-button" data-route="checkpoint">Ver avaliações →</button></section>'
+    +'</div>';
+    syncLiaUi();
   }
 
   function renderPath(){
@@ -1083,7 +1206,9 @@ body.light{--bg:#eef4fb;--bg-2:#f8fbff;--surface:#fff;--surface-2:#f5f9fd;--surf
   window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();deferredInstall=e;$('#installBtn').classList.remove('hidden');});
   $('#installBtn').addEventListener('click',async()=>{if(!deferredInstall){toast('Use a opção de instalar aplicativo do navegador.');return;}deferredInstall.prompt();await deferredInstall.userChoice;deferredInstall=null;$('#installBtn').classList.add('hidden');});
   if('serviceWorker'in navigator)window.addEventListener('load',()=>navigator.serviceWorker.register('sw.js').then(reg=>{
-    reg.addEventListener('updatefound',()=>{const w=reg.installing;if(!w)return;w.addEventListener('statechange',()=>{if(w.state==='installed'&&navigator.serviceWorker.controller)toast('Nova versão instalada. Recarregue quando terminar sua atividade.');});});
+    reg.update().catch(()=>{});
+    reg.addEventListener('updatefound',()=>{const w=reg.installing;if(!w)return;w.addEventListener('statechange',()=>{if(w.state==='installed'&&navigator.serviceWorker.controller){toast('FluentIA atualizado. Aplicando a nova versão…');setTimeout(()=>w.postMessage?.({type:'SKIP_WAITING'}),350);}});});
+    let refreshing=false;navigator.serviceWorker.addEventListener('controllerchange',()=>{if(refreshing)return;refreshing=true;location.reload();});
   }).catch(err=>console.warn('FluentIA: service worker indisponível.',err)));
   window.addEventListener('error',e=>{console.error(e.error||e.message);showFatal('Ocorreu um erro inesperado. Seu progresso continua salvo; recarregue o aplicativo se alguma tela parar de responder.');});
   window.addEventListener('unhandledrejection',e=>{console.error(e.reason);showFatal('Uma operação falhou inesperadamente. Seu progresso local foi preservado; tente recarregar a tela.');});
@@ -1091,6 +1216,7 @@ body.light{--bg:#eef4fb;--bg-2:#f8fbff;--surface:#fff;--surface-2:#f5f9fd;--surf
   const bootCheck=courseIntegrity();if(!bootCheck.ok){console.error('FluentIA: falha de integridade do curso.',bootCheck.issues);showFatal('O conteúdo local não passou na verificação de integridade. Recarregue o aplicativo ou reinstale esta versão.');}
   ensureLiaCompanion();
   document.addEventListener('pointermove',e=>{document.querySelectorAll('[data-lia-avatar]').forEach(el=>{const r=el.getBoundingClientRect();if(!r.width)return;const x=Math.max(-3,Math.min(3,(e.clientX-(r.left+r.width/2))/Math.max(1,r.width)*7));const y=Math.max(-2,Math.min(2,(e.clientY-(r.top+r.height/2))/Math.max(1,r.height)*5));el.style.setProperty('--look-x',x.toFixed(2)+'px');el.style.setProperty('--look-y',y.toFixed(2)+'px');});},{passive:true});
+  document.addEventListener('dblclick',e=>{const av=e.target.closest('[data-lia-avatar].hero');if(!av)return;setLiaMood('happy','Vamos praticar juntos!');speak('Hi '+(state.name||'there')+'! Let\'s practice English together.');});
   updateChrome();updateConnection();route((location.hash||`#${state.route||'home'}`).slice(1),false);if(!state.onboarded)setTimeout(placementIntro,350);
 })();
 </script>
