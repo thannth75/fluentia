@@ -1,32 +1,55 @@
-# FluentIA
+# FluentIA v5 — Lia
 
-Plataforma gratuita de estudo de inglês do Pre-A1/A0 ao C2, com trilha estruturada, listening, speaking, leitura, escrita, revisão espaçada, checkpoints e módulos de inglês para trabalho e vida nos EUA.
+Plataforma gratuita de estudo de inglês do Pre-A1/A0 ao C2, com aprendizagem ativa, prática de fala, escuta, leitura, escrita, revisão espaçada e situações reais do dia a dia.
+
+## Lia — professora-avatar
+
+A v5 introduz a **Lia**, professora-avatar do FluentIA. Ela:
+- aparece no dashboard e na conversação;
+- conduz a missão diária;
+- usa síntese de voz do navegador;
+- reage visualmente enquanto fala;
+- direciona cenários de vida real;
+- ajuda o aluno a praticar inglês em contexto em vez de apenas responder alternativas.
+
+## Conteúdo
+
+- 98 unidades, 14 por nível de A0 a C2;
+- 32 questões de nivelamento;
+- listening, ditado, leitura, escrita, vocabulário, gramática e speaking;
+- revisão espaçada e recuperação ativa de erros;
+- checkpoints e progresso por habilidade;
+- inglês para EUA e trabalho;
+- cenários de supermercado, restaurante, banco, farmácia, transporte, telefone, escola, família, moradia, emergência, DMV/documentos, atendimento, entrevista, delivery, warehouse, TI e muito mais.
 
 ## Produção
 
-Este repositório usa um empacotamento determinístico para preservar arquivos grandes sem truncamento durante a publicação. `npm run build` reconstrói os arquivos em `dist/` e valida SHA-256 de cada artefato antes de escrever a saída.
+O Vercel está conectado a este repositório. Cada push na `main` dispara um novo deployment.
 
-```bash
-npm run build
-```
+O build é determinístico:
+1. reconstrói os assets comprimidos;
+2. verifica SHA-256;
+3. aplica o patch v5 da Lia ao app base;
+4. verifica o SHA-256 final do `app.js`;
+5. publica `dist/`.
 
-A configuração `vercel.json` usa `dist/` como diretório de publicação. Não há dependências NPM de terceiros no build.
+Isso impede que um arquivo truncado seja publicado silenciosamente.
 
-## Conteúdo atual
+## Validação v5
 
-- 98 unidades, 14 por nível de A0 a C2
-- 32 questões de nivelamento
-- listening, ditado, leitura, escrita, vocabulário, gramática e fala
-- revisão espaçada e caderno de erros com recuperação ativa
-- progresso local, backup e PWA/offline
+Antes da publicação:
+- 52/52 testes de interface passaram;
+- 98 unidades verificadas;
+- service worker validado;
+- JavaScript validado por sintaxe;
+- teste de desempenho sem page errors.
 
 ## Privacidade
 
-O progresso fica no navegador do usuário. Não há cadastro obrigatório, anúncios ou trackers nesta versão.
+O progresso fica no navegador do usuário nesta versão. Não há cadastro obrigatório, anúncios ou trackers.
 
+## Deploy
 
-## Publicar no Vercel
+Produção: https://fluentia-nathanpires755-4642s-projects.vercel.app
 
-[Deploy with Vercel](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fthannth75%2Fapp)
-
-O projeto já contém `vercel.json`, `package.json` e `build.mjs`. No Vercel, importe este repositório e mantenha as configurações detectadas. O build executa `npm run build` e publica a pasta `dist`.
+> Observação: se a URL redirecionar para autenticação Vercel, a proteção de deployment do projeto precisa ser desativada em Vercel > Project Settings > Deployment Protection para liberar acesso público.
