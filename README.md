@@ -1,4 +1,4 @@
-# FluentIA 6.4 — inglês na vida real
+# FluentIA 6.4.2 — inglês na vida real
 
 FluentIA é uma plataforma gratuita e local-first para estudar inglês do A0/Pre-A1 ao C2 com prática ativa, fala, escuta, leitura, escrita, vocabulário, gramática, revisão espaçada, situações reais e a professora virtual Lia.
 
@@ -34,9 +34,9 @@ As provas finais combinam compreensão e produção. A intenção é tornar a pr
 
 A Lia funciona como interface de prática, orientação e feedback.
 
-Na versão gratuita atual, o núcleo permanece funcional sem API paga. O endpoint `/api/lia` possui validação de entrada, limite básico de requisições e respostas locais de coaching para que indisponibilidade de um provedor externo não derrube o curso.
+Na versão gratuita atual, a tela de conversação chama o endpoint seguro `/api/lia`. Ele possui validação de entrada, bloqueio básico de requisições cruzadas, limite de requisições e coaching local gratuito. Se o endpoint falhar ou ficar indisponível, a própria interface continua a atividade com o roteiro local, sem perder o progresso.
 
-O projeto não finge que esse fallback local é um LLM irrestrito. Um modelo generativo externo pode ser conectado futuramente por backend seguro, sem expor chaves no navegador e sem receber autoridade para aprovar provas ou emitir certificados.
+O projeto não finge que esse fallback local é um LLM irrestrito. A Lia hoje atua como tutora guiada com feedback, roteiro de cenário, reconhecimento de fala compatível com o navegador e backend seguro. Um modelo generativo externo pode ser conectado futuramente pelo mesmo backend, sem expor chaves no navegador e sem receber autoridade para aprovar provas ou emitir certificados.
 
 ## Fala e pronúncia
 

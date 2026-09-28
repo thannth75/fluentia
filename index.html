@@ -375,7 +375,7 @@ body.light{--bg:#eef4fb;--bg-2:#f8fbff;--surface:#fff;--surface-2:#f5f9fd;--surf
   const $$ = (s, root=document) => [...root.querySelectorAll(s)];
   const STORAGE_KEY='fluentia.v4.progress';
   const OLD_STORAGE_KEYS=['fluentia.v3.progress','fluentia.v2.progress'];
-  const APP_VERSION='6.4.1';
+  const APP_VERSION='6.4.2';
   const LEVELS=['A0','A1','A2','B1','B2','C1','C2'];
   const SKILL_LABELS={vocabulary:'Vocabulário',grammar:'Gramática',pronunciation:'Pronúncia',conversation:'Conversação',listening:'Listening',reading:'Leitura',writing:'Escrita'};
   const levelRank=l=>Math.max(0,LEVELS.indexOf(l));
@@ -712,16 +712,45 @@ body.light{--bg:#eef4fb;--bg-2:#f8fbff;--surface:#fff;--surface-2:#f5f9fd;--surf
   }
   function renderTalk(){
     const s=currentScenario();setPage('Conversação guiada','SPEAKING · ROLE-PLAY');
-    $('#view').innerHTML=`<div class="page"><div class="page-heading"><div><h1>${esc(s.title)}</h1><p>Objetivo: ${esc(s.goal)}</p></div></div><div class="talk-layout"><section class="card chat-card"><div class="chat-head"><div class="coach-inline"><div class="coach-small">AI</div><div><b>Coach local</b><small style="display:block;color:var(--muted)">sem API paga · correções de padrões comuns</small></div></div><button class="ghost" data-action="resetChat">↻ Reiniciar</button></div><div class="chat-body" id="chatBody"><div class="message ai">${esc(s.prompts[state.chatTurn%s.prompts.length])}</div></div><div class="chat-input"><button class="mic-button" id="chatMic" data-action="chatMic">🎙</button><input id="chatText" placeholder="Responda em inglês..." autocomplete="off"><button class="send-button" data-action="sendChat">Enviar</button></div></section><aside class="card scenario-panel"><small class="mini-label">CENÁRIOS</small><div class="scenario-list">${Object.entries(DATA.scenarios).map(([k,v])=>`<button class="scenario-item ${k===state.scenario?'active':''}" data-scenario="${k}"><b>${esc(v.title)}</b><small>${esc(v.goal)}</small></button>`).join('')}</div><div class="tip-box"><span>ℹ</span><p><strong>Limite técnico</strong><br>Sem uma IA externa, este coach não entende qualquer resposta como um professor humano. Ele faz role-play, mede produção e corrige padrões frequentes; o app continua 100% utilizável sem assinatura.</p></div></aside></div></div>`;
+    $('#view').innerHTML=`<div class="page"><div class="page-heading"><div><h1>${esc(s.title)}</h1><p>Objetivo: ${esc(s.goal)}</p></div></div><div class="talk-layout"><section class="card chat-card"><div class="chat-head"><div class="coach-inline"><div class="coach-small">L</div><div><b>Lia · tutora de prática</b><small style="display:block;color:var(--muted)">backend seguro · fallback local gratuito</small></div></div><button class="ghost" data-action="resetChat">↻ Reiniciar</button></div><div class="chat-body" id="chatBody"><div class="message ai">${esc(s.prompts[state.chatTurn%s.prompts.length])}</div></div><div class="chat-input"><button class="mic-button" id="chatMic" data-action="chatMic">🎙</button><input id="chatText" placeholder="Responda em inglês..." autocomplete="off"><button class="send-button" data-action="sendChat">Enviar</button></div></section><aside class="card scenario-panel"><small class="mini-label">CENÁRIOS</small><div class="scenario-list">${Object.entries(DATA.scenarios).map(([k,v])=>`<button class="scenario-item ${k===state.scenario?'active':''}" data-scenario="${k}"><b>${esc(v.title)}</b><small>${esc(v.goal)}</small></button>`).join('')}</div><div class="tip-box"><span>🧠</span><p><strong>Como a Lia funciona</strong><br>A conversa usa um backend seguro e mantém fallback gratuito quando um modelo externo não está configurado ou fica indisponível. Sua nota é calculada separadamente pelo motor pedagógico; a Lia não libera níveis nem certificados.</p></div></aside></div></div>`;
     if(state.autoSpeak)setTimeout(()=>speak(s.prompts[state.chatTurn%s.prompts.length]),250);
   }
-  function sendChat(text){
-    text=(text??$('#chatText')?.value??'').trim();if(!text)return;const s=currentScenario(),body=$('#chatBody'),fb=chatFeedback(text);if(!body)return;
+  async function askLia(message,scenario,currentPrompt,nextPrompt){
+    const ctrl=new AbortController(),timer=setTimeout(()=>ctrl.abort(),6500);
+    try{
+      const res=await fetch('/api/lia',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({
+        message:String(message||'').slice(0,1200),
+        level:state.level,
+        scenario:scenario?.title||'Everyday English',
+        goal:scenario?.goal||'Communicate clearly',
+        currentPrompt:currentPrompt||'',
+        nextPrompt:nextPrompt||''
+      }),signal:ctrl.signal});
+      if(!res.ok)throw new Error('lia_'+res.status);
+      const data=await res.json();
+      return data&&typeof data.reply==='string'&&data.reply.trim()?data:null;
+    }catch(err){
+      console.warn('FluentIA: Lia backend fallback.',err?.message||err);
+      return null;
+    }finally{clearTimeout(timer);}
+  }
+  async function sendChat(text){
+    text=(text??$('#chatText')?.value??'').trim();if(!text)return;
+    const s=currentScenario(),body=$('#chatBody'),currentPrompt=s.prompts[state.chatTurn%s.prompts.length],fb=chatFeedback(text);if(!body)return;
     body.insertAdjacentHTML('beforeend',`<div class="message user">${esc(text)}</div>`);
     if(fb.corrected!==text||fb.notes.length)body.insertAdjacentHTML('beforeend',`<div class="message correction"><strong>Correção</strong><br>${esc(fb.corrected)}<br><small>${esc(fb.tip)}</small></div>`);
     else body.insertAdjacentHTML('beforeend',`<div class="message correction"><strong>Produção: ${fb.score}%</strong><br>${esc(fb.tip)}</div>`);
-    if(fb.corrected!==text){addError('conversation',s.prompts[state.chatTurn%s.prompts.length],text,fb.corrected);updateSkill('conversation',Math.max(45,fb.score-10));}else updateSkill('conversation',fb.score);
-    touchStudy(5,2);state.chatTurn=(state.chatTurn+1)%s.prompts.length;save();const next=s.prompts[state.chatTurn%s.prompts.length];setTimeout(()=>{body.insertAdjacentHTML('beforeend',`<div class="message ai">${esc(next)}</div>`);body.scrollTop=body.scrollHeight;if(state.autoSpeak)speak(next);},250);if($('#chatText'))$('#chatText').value='';body.scrollTop=body.scrollHeight;
+    if(fb.corrected!==text){addError('conversation',currentPrompt,text,fb.corrected);updateSkill('conversation',Math.max(45,fb.score-10));}else updateSkill('conversation',fb.score);
+    touchStudy(5,2);state.chatTurn=(state.chatTurn+1)%s.prompts.length;save();
+    const next=s.prompts[state.chatTurn%s.prompts.length],thinkingId='lia-'+Date.now();
+    body.insertAdjacentHTML('beforeend',`<div class="message ai" id="${thinkingId}">Lia está pensando…</div>`);
+    if($('#chatText'))$('#chatText').value='';body.scrollTop=body.scrollHeight;
+    const lia=await askLia(text,s,currentPrompt,next);
+    const bubble=document.getElementById(thinkingId);
+    const answer=lia?.reply||next;
+    if(bubble)bubble.textContent=answer;
+    body.scrollTop=body.scrollHeight;
+    if(state.autoSpeak)speak(answer);
   }
 
   function pronunciationPool(){return allLessons().filter(l=>levelRank(l.level)<=Math.min(LEVELS.length-1,levelRank(state.level)+1)).map(l=>({text:l.en,pt:l.pt,level:l.level}));}

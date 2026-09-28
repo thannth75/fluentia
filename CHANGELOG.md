@@ -1,5 +1,15 @@
 # Changelog
 
+## 6.4.2 — Lia integrada ao backend
+
+- tela de conversação passa a chamar `/api/lia` de verdade;
+- timeout de rede e fallback para roteiro local quando o backend falha;
+- nota de conversação continua independente da resposta da Lia;
+- backend recebe nível, objetivo e próxima pergunta do cenário para orientar a prática;
+- validação JSON, sanitização, proteção básica contra chamadas cross-site e rate limit;
+- nenhuma IA pode aprovar prova, liberar faixa ou emitir certificado;
+- cache PWA atualizado para 6.4.2.
+
 ## 6.4.0 — Produção, domínio e estabilidade
 
 - build principal substituído por release autocontida, removendo dependência da cadeia histórica frágil de patches;

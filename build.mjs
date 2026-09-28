@@ -20,11 +20,12 @@ for(const rel of publish){
 const html=fs.readFileSync(path.join(out,'index.html'),'utf8');
 const requiredMarkers=[
   'FluentIA',
-  "APP_VERSION='6.4.1'",
+  "APP_VERSION='6.4.2'",
   'renderSprint',
   'renderShadowing',
   'levelExamPassed',
-  'Provas e certificado'
+  'Provas e certificado',
+  "fetch('/api/lia'"
 ];
 for(const marker of requiredMarkers){
   if(!html.includes(marker)) throw new Error('index.html missing required production marker: '+marker);
@@ -44,9 +45,10 @@ fs.unlinkSync(tmp);
 if(chk.status!==0) throw new Error(chk.stderr||chk.stdout||'Inline JS syntax error');
 
 JSON.parse(fs.readFileSync(path.join(out,'manifest.webmanifest'),'utf8'));
-const swChk=spawnSync(process.execPath,['--check',path.join(out,'sw.js')],{encoding:'utf8'});
-if(swChk.status!==0) throw new Error(swChk.stderr||swChk.stdout||'Service worker syntax error');
-
+for(const js of ['sw.js']){
+  const c=spawnSync(process.execPath,['--check',path.join(out,js)],{encoding:'utf8'});
+  if(c.status!==0) throw new Error(c.stderr||c.stdout||('Syntax error: '+js));
+}
 for(const rel of ['icons/icon-192.png','icons/icon-512.png']){
   const b=fs.readFileSync(path.join(out,rel));
   if(b.length<100 || b.subarray(0,8).toString('hex')!=='89504e470d0a1a0a') throw new Error('Invalid PNG: '+rel);
@@ -58,10 +60,10 @@ if(/AIza[0-9A-Za-z_-]{25,}|sk-[A-Za-z0-9_-]{20,}|BEGIN (RSA |EC |OPENSSH )?PRIVA
 const sha=x=>crypto.createHash('sha256').update(fs.readFileSync(x)).digest('hex');
 fs.writeFileSync(path.join(out,'build-info.json'),JSON.stringify({
   app:'FluentIA',
-  version:'6.4.1',
+  version:'6.4.2',
   builtAt:new Date().toISOString(),
-  validation:'inline-js+manifest+service-worker+asset-links+png-icons+secret-scan',
+  validation:'inline-js+lia-integration+manifest+service-worker+asset-links+png-icons+secret-scan',
   indexSha256:sha(path.join(out,'index.html'))
 },null,2));
 
-console.log('FluentIA 6.4.1 production build verified.');
+console.log('FluentIA 6.4.2 production build verified.');
