@@ -1,0 +1,17 @@
+name: Actions Infrastructure Diagnostic
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - ".github/workflows/actions-diagnostic.yml"
+
+jobs:
+  hello:
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - name: Runner started
+        run: |
+          echo "GitHub Actions runner is healthy."
+          uname -a
