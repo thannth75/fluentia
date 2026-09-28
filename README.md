@@ -1,10 +1,10 @@
-# FluentIA 6.5.0 — inglês na vida real
+# FluentIA 6.6.0 — inglês na vida real
 
 FluentIA é uma plataforma gratuita e local-first para estudar inglês do A0/Pre-A1 ao C2 com prática ativa, fala, escuta, leitura, escrita, vocabulário, gramática, revisão espaçada, situações reais e a professora virtual Lia.
 
 ## Lia 3D interativa
 
-A Lia agora é uma personagem interativa construída diretamente para a web, e não apenas uma imagem ou ícone estático.
+A Lia é uma personagem vetorial 3D construída diretamente para a web, não uma fotografia estática, GIF ou simples ícone.
 
 Ela possui:
 - rosto e corpo em CSS 3D/Web;
@@ -20,7 +20,13 @@ Ela possui:
 
 O avatar não é um vídeo pré-gravado: seus estados são disparados pelo comportamento real da aplicação.
 
-## O que a 6.5 entrega
+## Interface 6.6
+
+A home foi reconstruída para deixar a prática em primeiro plano: Lia em destaque, estados visíveis da tutora, acesso imediato a conversação, pronúncia, listening, vocabulário, gramática, EUA, revisão, trilha de níveis, missão diária e situações reais.
+
+Não existe cartão de plano pago ou bloqueio "Pro" na experiência principal.
+
+## O que a 6.6 entrega
 
 - trilha A0/Pre-A1 → C2;
 - plano diário adaptativo;
@@ -87,7 +93,7 @@ Ele não é certificação CEFR oficial, diploma acadêmico, Cambridge, IELTS ou
 npm run verify
 ```
 
-A validação 6.5 inclui um teste dedicado ao avatar para confirmar que escuta, fala, pensamento, correção e comemoração continuam conectados ao código.
+A validação 6.6 inclui testes dedicados ao avatar e à interface para confirmar que escuta, fala, pensamento, correção, comemoração, home premium e atualização do PWA continuam conectados ao código.
 
 ## Compromisso de gratuidade
 
