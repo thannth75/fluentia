@@ -1,0 +1,14 @@
+{
+  "index.html": {"parts":["index_html.p00.b64"],"sha256":"2de94816fab1452d61374d6557c3c597c378698d1de957815498f7536751510b","bytes":4624,"gzip_bytes":1623},
+  "styles.css": {"parts":["styles_css.p00.b64","styles_css.p01.b64","styles_css.p02.b64"],"sha256":"a86e0b4b4eeaed0f0c64639277157aa125536cc188e20e5d373d4f005cddf2bc","bytes":57315,"gzip_bytes":13577},
+  "data.js": {"parts":["data_js.p00.b64","data_js.p01.b64","data_js.p02.b64"],"sha256":"cb54fe9948343f936ddafc633cff809f4652724db27bddc46e4a8e692978e103","bytes":32146,"gzip_bytes":12501},
+  "data-v4.js": {"parts":["data-v4_js.p00.b64","data-v4_js.p01.b64"],"sha256":"e5b858b632cc27f8475e4e142717510eb8100af6e06fbe83126b521fae2e9934","bytes":17220,"gzip_bytes":7135},
+  "data-v5.js": {"parts":["data-v5_js.p00.b64"],"sha256":"d5d8ffbc2e26228ef568cc5b66e93415018a9642c7f78750da9ddb3d094502e4","bytes":7384,"gzip_bytes":3146},
+  "data-v6.js": {"parts":["data-v6_js.p00.b64"],"sha256":"088bdb85d5dcec7d41c190c3f76df3ca5da994137eb576c7c29c55e84e7754b2","bytes":7946,"gzip_bytes":3260},
+  "app.js": {"parts":["app_js.p00.b64","app_js.p01.b64","app_js.p02.b64","app_js.p03.b64","app_js.p04.b64","app_js.p05.b64"],"sha256":"74e589802d1da9d6490b95804f7b1b3f568376983ad0868f933bd00d1c61223c","bytes":108041,"gzip_bytes":33326},
+  "sw.js": {"parts":["sw_js.p00.b64"],"sha256":"8f24b3e32cb18c969815fd829439778fda524e425e3f45733c893b5255b93829","bytes":1557,"gzip_bytes":681},
+  "manifest.webmanifest": {"parts":["manifest_webmanifest.p00.b64"],"sha256":"0d2c4117881a6931c864342edcb398ed8a75ae7748ed4f2a9efb048ab8f40fee","bytes":910,"gzip_bytes":458},
+  "icons/icon-192.png": {"parts":["icons__icon-192_png.p00.b64"],"sha256":"d28ee4d7535d8103b61bdef02564dd85f2b4f6eb2320a8e068873075021c062f","bytes":4471,"gzip_bytes":4386},
+  "icons/icon-512.png": {"parts":["icons__icon-512_png.p00.b64","icons__icon-512_png.p01.b64"],"sha256":"680330b576efa700452051284fa5a81ac508087762392a2f886f305bf9a0eece","bytes":11544,"gzip_bytes":10584},
+  "assets/lia-3d.webp": {"parts":["assets__lia-3d_webp.p00.b64","assets__lia-3d_webp.p01.b64","assets__lia-3d_webp.p02.b64","assets__lia-3d_webp.p03.b64"],"sha256":"ddb04dd31e0a0955a315c0b5dabdfaa623826b777cfb66472db82276c5a764a9","bytes":18252,"gzip_bytes":18280}
+}
