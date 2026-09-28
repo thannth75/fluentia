@@ -1,13 +1,32 @@
-# FluentIA 6.4.2 — inglês na vida real
+# FluentIA 6.5.0 — inglês na vida real
 
 FluentIA é uma plataforma gratuita e local-first para estudar inglês do A0/Pre-A1 ao C2 com prática ativa, fala, escuta, leitura, escrita, vocabulário, gramática, revisão espaçada, situações reais e a professora virtual Lia.
 
-## O que a 6.4 entrega
+## Lia 3D interativa
+
+A Lia agora é uma personagem interativa construída diretamente para a web, e não apenas uma imagem ou ícone estático.
+
+Ela possui:
+- rosto e corpo em CSS 3D/Web;
+- olhos que acompanham o ponteiro;
+- animação de boca durante a fala;
+- estados de escuta, pensamento, fala, correção, incentivo e comemoração;
+- reação durante reconhecimento de voz;
+- reação às correções de aula;
+- reação à pronúncia e shadowing;
+- comemoração em conquistas;
+- presença flutuante em toda a plataforma;
+- integração com a tela de conversação e com o endpoint seguro da Lia.
+
+O avatar não é um vídeo pré-gravado: seus estados são disparados pelo comportamento real da aplicação.
+
+## O que a 6.5 entrega
 
 - trilha A0/Pre-A1 → C2;
 - plano diário adaptativo;
 - Sprint prático de 12 minutos;
 - Shadowing para ouvir e repetir frases naturais;
+- Lia 3D interativa;
 - conversação guiada com feedback;
 - pronúncia e reconhecimento de fala quando o navegador oferece suporte;
 - listening, ditado, leitura e escrita;
@@ -28,15 +47,15 @@ O FluentIA não considera XP ou presença como prova de domínio. O fluxo é:
 
 **ouvir → compreender → produzir → receber feedback → corrigir → recuperar da memória → aplicar → revisar → ser avaliado**
 
-As provas finais combinam compreensão e produção. A intenção é tornar a progressão dependente de evidência de aprendizagem, e não apenas de cliques.
+As provas finais combinam compreensão e produção. A progressão depende de evidência de aprendizagem, e não apenas de cliques.
 
-## Lia
+## Lia e IA
 
-A Lia funciona como interface de prática, orientação e feedback.
+A Lia funciona como professora virtual, interface de prática, orientação e feedback.
 
-Na versão gratuita atual, a tela de conversação chama o endpoint seguro `/api/lia`. Ele possui validação de entrada, bloqueio básico de requisições cruzadas, limite de requisições e coaching local gratuito. Se o endpoint falhar ou ficar indisponível, a própria interface continua a atividade com o roteiro local, sem perder o progresso.
+Na versão gratuita atual, a tela de conversação chama o endpoint seguro `/api/lia`. Ele possui validação de entrada, bloqueio básico de requisições cruzadas, limite de requisições e coaching local gratuito. Se o endpoint falhar, a atividade continua com fallback local sem perder o progresso.
 
-O projeto não finge que esse fallback local é um LLM irrestrito. A Lia hoje atua como tutora guiada com feedback, roteiro de cenário, reconhecimento de fala compatível com o navegador e backend seguro. Um modelo generativo externo pode ser conectado futuramente pelo mesmo backend, sem expor chaves no navegador e sem receber autoridade para aprovar provas ou emitir certificados.
+A Lia não possui autoridade para aprovar prova, liberar nível ou emitir certificado. Essa separação existe para evitar aprovação falsa causada por erro de IA ou indisponibilidade externa.
 
 ## Fala e pronúncia
 
@@ -60,17 +79,15 @@ Ele não é certificação CEFR oficial, diploma acadêmico, Cambridge, IELTS ou
 - headers de segurança no Vercel;
 - scan de segredos durante o build;
 - service worker ignora rotas `/api/`;
-- build valida sintaxe, manifesto e assets antes da publicação.
+- build valida sintaxe, integração da Lia 3D, manifesto e assets antes da publicação.
 
-Consulte também `PRIVACIDADE.md`, `SEGURANCA.md`, `ACESSIBILIDADE.md`, `METODO-DE-ESTUDO.md` e `QA-TESTES.md`.
-
-## Build
+## Build e validação
 
 ```bash
 npm run verify
 ```
 
-O build da 6.4 é autocontido e não depende da antiga cadeia de patches históricos para gerar a aplicação principal.
+A validação 6.5 inclui um teste dedicado ao avatar para confirmar que escuta, fala, pensamento, correção e comemoração continuam conectados ao código.
 
 ## Compromisso de gratuidade
 
