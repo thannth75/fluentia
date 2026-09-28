@@ -1,0 +1,10 @@
+{
+  "name": "fluentia",
+  "version": "4.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node build.mjs",
+    "verify": "npm run build && node --check dist/app.js && node --check dist/data.js && node --check dist/data-v4.js && node --check dist/sw.js"
+  }
+}

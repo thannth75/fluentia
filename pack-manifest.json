@@ -1,0 +1,83 @@
+{
+  "index.html": {
+    "parts": [
+      "index_html.part00.b64"
+    ],
+    "sha256": "6a7e009d5706444e134019639092ee176848f95ec5c8850da7ffcdc37ecee50e",
+    "bytes": 4320,
+    "gzip_bytes": 1575
+  },
+  "styles.css": {
+    "parts": [
+      "styles_css.part00_s00.b64",
+      "styles_css.part00_s01.b64",
+      "styles_css.part00_s02.b64"
+    ],
+    "sha256": "cf1cfc1e08ff44255d1ada9c2f826aaefe296b68802a2bc24d999bc2b62162d9",
+    "bytes": 30814,
+    "gzip_bytes": 7950
+  },
+  "data.js": {
+    "parts": [
+      "data_js.part00.b64"
+    ],
+    "sha256": "cb54fe9948343f936ddafc633cff809f4652724db27bddc46e4a8e692978e103",
+    "bytes": 32146,
+    "gzip_bytes": 12501
+  },
+  "data-v4.js": {
+    "parts": [
+      "data-v4_js.part00.b64"
+    ],
+    "sha256": "e5b858b632cc27f8475e4e142717510eb8100af6e06fbe83126b521fae2e9934",
+    "bytes": 17220,
+    "gzip_bytes": 7135
+  },
+  "app.js": {
+    "parts": [
+      "app_js.part00_00.b64",
+      "app_js.part00_01_s00.b64",
+      "app_js.part00_01_s01.b64",
+      "app_js.part00_02_s00.b64",
+      "app_js.part00_02_s01.b64",
+      "app_js.part00_03_s00.b64",
+      "app_js.part00_03_s01.b64",
+      "app_js.part01.b64"
+    ],
+    "sha256": "6665cc7780fb4fe33eff60aaa519e310dcc8c5b1ea9ec539e3002004a8c68daf",
+    "bytes": 89743,
+    "gzip_bytes": 27814
+  },
+  "sw.js": {
+    "parts": [
+      "sw_js.part00.b64"
+    ],
+    "sha256": "8efbaacfba0a10cc24cd47890979904fc08e7dd2fa613e3b5907086a4f3ff0dd",
+    "bytes": 1193,
+    "gzip_bytes": 588
+  },
+  "manifest.webmanifest": {
+    "parts": [
+      "manifest_webmanifest.part00.b64"
+    ],
+    "sha256": "be7210876f03044a8738b3cfc13f1741b09d032217d7606cc3dd38640fd3368a",
+    "bytes": 767,
+    "gzip_bytes": 433
+  },
+  "icons/icon-192.png": {
+    "parts": [
+      "icons__icon-192_png.part00.b64"
+    ],
+    "sha256": "9cfe0798616c38982762dc67ebcfaef49e1bcc919ca33c54c7bce3e161f01c3d",
+    "bytes": 1155,
+    "gzip_bytes": 999
+  },
+  "icons/icon-512.png": {
+    "parts": [
+      "icons__icon-512_png.part00.b64"
+    ],
+    "sha256": "ef4ef690628c45a166d2c449c215c948f64e6d8165b0b9e121bb82aba8e92ebc",
+    "bytes": 3375,
+    "gzip_bytes": 2378
+  }
+}
