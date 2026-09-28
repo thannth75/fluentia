@@ -1,55 +1,68 @@
-# FluentIA v5 — Lia
+# FluentIA 6.3 — Inglês na vida real
 
-Plataforma gratuita de estudo de inglês do Pre-A1/A0 ao C2, com aprendizagem ativa, prática de fala, escuta, leitura, escrita, revisão espaçada e situações reais do dia a dia.
+FluentIA é uma PWA gratuita de estudo de inglês, do A0 ao C2, com prática ativa, Lia 3D, conversação, listening, leitura, escrita, vocabulário, gramática, revisão espaçada e situações reais.
 
-## Lia — professora-avatar
+## Método
 
-A v5 introduz a **Lia**, professora-avatar do FluentIA. Ela:
-- aparece no dashboard e na conversação;
-- conduz a missão diária;
-- usa síntese de voz do navegador;
-- reage visualmente enquanto fala;
-- direciona cenários de vida real;
-- ajuda o aluno a praticar inglês em contexto em vez de apenas responder alternativas.
+O ciclo principal é:
+
+**ouvir → compreender → produzir → receber feedback → revisar → usar em situação real**
+
+O sistema adapta ritmo, duração e tipo de prática à preferência e ao desempenho do aluno. Não trata pessoas como presas a um “estilo de aprendizagem” fixo.
+
+## Lia
+
+A Lia é a professora-avatar do FluentIA. Ela conduz missões, fala, escuta quando o navegador permite, reage a acertos/erros e orienta a prática.
+
+## Provas finais por nível
+
+A0, A1, A2, B1, B2, C1 e C2 têm uma prova final obrigatória.
+
+Para liberar a prova:
+- 100% das unidades do nível concluídas;
+- checkpoint interno de pelo menos 80%.
+
+Para ser aprovado:
+- leitura/compreensão >= 80%;
+- conversação >= 80% de média;
+- nenhuma resposta conversacional abaixo de 70%;
+- quando o navegador oferece reconhecimento de voz, pelo menos 2 das 3 respostas precisam ser produzidas pelo microfone.
+
+A faixa seguinte continua bloqueada até a aprovação.
+
+## Certificado de conquista
+
+Após aprovação no C2, o FluentIA gera um **Certificado de Conquista Interna FluentIA** com nome, data, notas e ID local, pronto para impressão/PDF.
+
+Esse certificado reconhece o mérito dentro do FluentIA. Ele **não é diploma acadêmico, certificação CEFR oficial, Cambridge, IELTS ou TOEFL**, e não representa promessa de sotaque perfeito ou equivalência automática a um falante nativo.
 
 ## Conteúdo
 
-- 98 unidades, 14 por nível de A0 a C2;
-- 32 questões de nivelamento;
-- listening, ditado, leitura, escrita, vocabulário, gramática e speaking;
-- revisão espaçada e recuperação ativa de erros;
-- checkpoints e progresso por habilidade;
-- inglês para EUA e trabalho;
-- cenários de supermercado, restaurante, banco, farmácia, transporte, telefone, escola, família, moradia, emergência, DMV/documentos, atendimento, entrevista, delivery, warehouse, TI e muito mais.
+- 98 unidades A0–C2;
+- prática de pronúncia, listening, leitura, escrita e conversação;
+- revisão espaçada e recuperação ativa;
+- Sprint Prático de 12 minutos;
+- cenários de mercado, restaurante, banco, saúde, transporte, telefone, escola, moradia, emergência, trabalho, entrevista, delivery, warehouse, TI, viagens e imigração;
+- modo EUA e inglês para trabalho;
+- progresso salvo localmente no navegador.
+
+## Qualidade
+
+A release 6.3 mantém a suíte principal com **60/60 verificações** e recebeu testes adicionais para:
+- bloqueio da prova;
+- reprovação sem evidência oral suficiente;
+- aprovação com leitura + conversação;
+- desbloqueio da próxima faixa somente após aprovação;
+- proteção do certificado C2.
 
 ## Produção
 
-O Vercel está conectado a este repositório. Cada push na `main` dispara um novo deployment.
+O Vercel está conectado à branch `main` deste repositório.
 
-O build é determinístico:
-1. reconstrói os assets comprimidos;
-2. verifica SHA-256;
-3. aplica o patch v5 da Lia ao app base;
-4. verifica o SHA-256 final do `app.js`;
-5. publica `dist/`.
+O build:
+1. reconstrói a base estável;
+2. verifica integridade SHA-256;
+3. aplica a release 6.3;
+4. verifica novamente os assets finais;
+5. publica apenas se todas as verificações passarem.
 
-Isso impede que um arquivo truncado seja publicado silenciosamente.
-
-## Validação v5
-
-Antes da publicação:
-- 52/52 testes de interface passaram;
-- 98 unidades verificadas;
-- service worker validado;
-- JavaScript validado por sintaxe;
-- teste de desempenho sem page errors.
-
-## Privacidade
-
-O progresso fica no navegador do usuário nesta versão. Não há cadastro obrigatório, anúncios ou trackers.
-
-## Deploy
-
-Produção: https://fluentia-nathanpires755-4642s-projects.vercel.app
-
-> Observação: se a URL redirecionar para autenticação Vercel, a proteção de deployment do projeto precisa ser desativada em Vercel > Project Settings > Deployment Protection para liberar acesso público.
