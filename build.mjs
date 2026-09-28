@@ -8,7 +8,7 @@ const out=path.join(root,'dist');
 fs.rmSync(out,{recursive:true,force:true});
 fs.mkdirSync(out,{recursive:true});
 
-const publish=['index.html','manifest.webmanifest','sw.js','icons/icon-192.png','icons/icon-512.png'];
+const publish=['index.html','manifest.webmanifest','sw.js','icons/icon.svg','icons/icon-192.png','icons/icon-512.png'];
 for(const rel of publish){
   const src=path.join(root,rel);
   const dst=path.join(out,rel);
@@ -58,6 +58,7 @@ for(const js of ['sw.js']){
   const c=spawnSync(process.execPath,['--check',path.join(out,js)],{encoding:'utf8'});
   if(c.status!==0) throw new Error(c.stderr||c.stdout||('Syntax error: '+js));
 }
+if(!fs.readFileSync(path.join(out,'icons/icon.svg'),'utf8').includes('<svg')) throw new Error('Invalid SVG: icons/icon.svg');
 for(const rel of ['icons/icon-192.png','icons/icon-512.png']){
   const b=fs.readFileSync(path.join(out,rel));
   if(b.length<100 || b.subarray(0,8).toString('hex')!=='89504e470d0a1a0a') throw new Error('Invalid PNG: '+rel);
