@@ -11,7 +11,8 @@
     "parts": [
       "v5_styles_css_00.b64",
       "v5_styles_css_01.b64",
-      "v5_styles_css_02.b64"
+      "v5_style2_00.b64",
+      "v5_style2_01.b64"
     ],
     "sha256": "6dbfc205dc0b65767761c922ddb24e5677505b87fd3ee38d21b688949e860b53",
     "bytes": 35058,
@@ -82,7 +83,9 @@
   },
   "data-v5.js": {
     "parts": [
-      "v5_data-v5_js_00.b64"
+      "v5_data_00.b64",
+      "v5_data_01.b64",
+      "v5_data_02.b64"
     ],
     "sha256": "d5d8ffbc2e26228ef568cc5b66e93415018a9642c7f78750da9ddb3d094502e4",
     "bytes": 7384,
