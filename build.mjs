@@ -20,7 +20,16 @@ for(const rel of publish){
 const html=fs.readFileSync(path.join(out,'index.html'),'utf8');
 const requiredMarkers=[
   'FluentIA',
-  "APP_VERSION='6.4.2'",
+  "APP_VERSION='6.5.0'",
+  'FLUENTIA_LIA_3D_V1',
+  'function liaAvatarHtml',
+  'function setLiaMood',
+  "setLiaMood('listening'",
+  "setLiaMood('speaking'",
+  "setLiaMood('thinking'",
+  "setLiaMood('correcting'",
+  "setLiaMood('celebrate'",
+  'data-lia-avatar',
   'renderSprint',
   'renderShadowing',
   'levelExamPassed',
@@ -60,10 +69,10 @@ if(/AIza[0-9A-Za-z_-]{25,}|sk-[A-Za-z0-9_-]{20,}|BEGIN (RSA |EC |OPENSSH )?PRIVA
 const sha=x=>crypto.createHash('sha256').update(fs.readFileSync(x)).digest('hex');
 fs.writeFileSync(path.join(out,'build-info.json'),JSON.stringify({
   app:'FluentIA',
-  version:'6.4.2',
+  version:'6.5.0',
   builtAt:new Date().toISOString(),
-  validation:'inline-js+lia-integration+manifest+service-worker+asset-links+png-icons+secret-scan',
+  validation:'inline-js+lia-3d-states+lia-integration+manifest+service-worker+asset-links+png-icons+secret-scan',
   indexSha256:sha(path.join(out,'index.html'))
 },null,2));
 
-console.log('FluentIA 6.4.2 production build verified.');
+console.log('FluentIA 6.5.0 production build verified — interactive Lia 3D enabled.');
