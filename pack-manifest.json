@@ -1,21 +1,21 @@
 {
   "index.html": {
     "parts": [
-      "index_html.part00.b64"
+      "v5_index_html_00.b64"
     ],
-    "sha256": "6a7e009d5706444e134019639092ee176848f95ec5c8850da7ffcdc37ecee50e",
-    "bytes": 4320,
-    "gzip_bytes": 1575
+    "sha256": "a5ca2d35565ce8337210d97c2d5ad0907be0bee487909f26885ed7a34ee724ae",
+    "bytes": 4357,
+    "gzip_bytes": 1579
   },
   "styles.css": {
     "parts": [
-      "styles_css.part00_s00.b64",
-      "styles_css.part00_s01.b64",
-      "styles_css.part00_s02.b64"
+      "v5_styles_css_00.b64",
+      "v5_styles_css_01.b64",
+      "v5_styles_css_02.b64"
     ],
-    "sha256": "cf1cfc1e08ff44255d1ada9c2f826aaefe296b68802a2bc24d999bc2b62162d9",
-    "bytes": 30814,
-    "gzip_bytes": 7950
+    "sha256": "6dbfc205dc0b65767761c922ddb24e5677505b87fd3ee38d21b688949e860b53",
+    "bytes": 35058,
+    "gzip_bytes": 8996
   },
   "data.js": {
     "parts": [
@@ -50,11 +50,11 @@
   },
   "sw.js": {
     "parts": [
-      "sw_js.part00.b64"
+      "v5_sw_js_00.b64"
     ],
-    "sha256": "8efbaacfba0a10cc24cd47890979904fc08e7dd2fa613e3b5907086a4f3ff0dd",
-    "bytes": 1193,
-    "gzip_bytes": 588
+    "sha256": "0413245befbe942f66acb029b336cc3633b4962b80f1564d79ba3cf0b602bc30",
+    "bytes": 1208,
+    "gzip_bytes": 593
   },
   "manifest.webmanifest": {
     "parts": [
@@ -79,5 +79,13 @@
     "sha256": "ef4ef690628c45a166d2c449c215c948f64e6d8165b0b9e121bb82aba8e92ebc",
     "bytes": 3375,
     "gzip_bytes": 2378
+  },
+  "data-v5.js": {
+    "parts": [
+      "v5_data-v5_js_00.b64"
+    ],
+    "sha256": "d5d8ffbc2e26228ef568cc5b66e93415018a9642c7f78750da9ddb3d094502e4",
+    "bytes": 7384,
+    "gzip_bytes": 3146
   }
 }
