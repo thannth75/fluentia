@@ -1,5 +1,27 @@
 # Changelog
 
+## 7.0.0 — Speak First
+
+- aulas refeitas para colocar produção oral no começo e no fim da unidade;
+- reconhecimento de fala obrigatório para concluir unidade quando suportado pelo navegador;
+- repetição oral exige pelo menos 75% de inteligibilidade interna;
+- fala livre exige pelo menos 70% antes da unidade ser considerada dominada;
+- removido o antigo fluxo que permitia pular speaking em navegador compatível;
+- feedback de fala palavra por palavra com termos reconhecidos, ausentes e extras;
+- reconhecimento de voz com resultados intermediários para legenda ao vivo;
+- histórico de conversa salvo localmente por cenário;
+- transcrição completa acessível na conversa;
+- palavras da conversa podem ser tocadas e enviadas à revisão espaçada;
+- FluentIA Arcade com Audio Blitz, Meaning Rush, Sentence Builder e Reverse Recall;
+- jogos usam conteúdo real da trilha em vez de banco desconectado;
+- plano diário passa a incluir recuperação por jogo;
+- Lia pode usar IA generativa no servidor quando `GEMINI_API_KEY` está disponível;
+- IA generativa mantém fallback local automático;
+- nenhuma IA recebe autoridade para aprovar aluno ou certificado;
+- cache PWA atualizado para `fluentia-7.0.0`;
+- novos testes impedem regressão das regras Speak First.
+
+
 ## 6.6.0 — Interface premium e Lia reconstruída
 
 - home reconstruída com Lia como centro da experiência;
