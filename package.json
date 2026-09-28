@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "build": "node build.mjs",
-    "verify": "npm run build && node --check api/lia.js"
+    "test:lia": "node tests/lia-unit.mjs",
+    "verify": "npm run build && node --check api/lia.js && npm run test:lia"
   }
 }
