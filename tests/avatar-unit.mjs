@@ -34,3 +34,9 @@ assert.ok(html.includes("r.onstart=()=>setLiaMood('listening'"), 'Recognition st
 assert.ok(html.includes('aria-label="Lia, professora virtual 3D interativa"'), 'Avatar accessibility label missing');
 
 console.log('FluentIA Lia 3D interaction tests passed.');
+
+assert.ok(html.includes("FLUENTIA_6_6_PREMIUM_UI"), 'Missing 6.6 marker: FLUENTIA_6_6_PREMIUM_UI');
+assert.ok(html.includes("lia-state-rail"), 'Missing 6.6 marker: lia-state-rail');
+assert.ok(html.includes("hero-premium"), 'Missing 6.6 marker: hero-premium');
+assert.ok(html.includes("controllerchange"), 'Missing 6.6 marker: controllerchange');
+console.log('FluentIA 6.6 premium avatar/UI tests passed.');
