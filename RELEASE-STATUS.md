@@ -1,46 +1,59 @@
-# FluentIA 6.4.2 — Status de produção
+# FluentIA 6.6.0 — Status de produção
 
 Verificação executada em 28/09/2026.
 
 ## Produção
 
 - URL pública: https://fluentia-delta.vercel.app/
-- Vercel: produção conectada à branch `main`
-- Versão publicada: 6.4.2
-- build-info.json: disponível e identificado como 6.4.2
-- deployment: READY
-- runtime errors na verificação: nenhum encontrado
+- Vercel conectado à branch `main`
+- versão publicada: 6.6.0
+- `build-info.json`: HTTP 200 e versão 6.6.0
+- deployment de produção: READY
+- aliases de produção ativos
+- erros de runtime observados na verificação: nenhum
 
-## Itens validados em produção
+## Interface e Lia
 
-- página inicial responde HTTP 200;
-- manifest PWA responde HTTP 200;
-- service worker responde HTTP 200;
-- ícone 192x192 responde HTTP 200 e MIME image/png;
-- endpoint `/api/lia` existe e rejeita GET com HTTP 405, como esperado;
-- cache do service worker está em `fluentia-6.4.2`;
+- logo FluentIA próprio ativo;
+- home premium sem cartão de assinatura obrigatória;
+- Lia vetorial 3D construída no código, sem foto estática;
+- olhos acompanham o ponteiro;
+- boca anima enquanto a síntese de voz fala;
+- estados: ociosa, ouvindo, pensando, falando, corrigindo, incentivando e comemorando;
+- painel de estados da Lia visível na home;
+- Lia reage ao microfone, ao backend, às correções, à pronúncia, ao shadowing e às provas;
+- Lia flutuante disponível como atalho de prática.
+
+## Aprendizado
+
+- trilha A0/Pre-A1 a C2;
+- leitura, listening, ditado, escrita, vocabulário e gramática;
+- conversação guiada;
+- pronúncia e shadowing;
+- revisão espaçada e caderno de erros;
+- cenários cotidianos, trabalho e EUA;
+- Sprint prático;
+- prova final por nível;
+- próxima faixa bloqueada até aprovação;
+- certificado interno somente após aprovação final no C2.
+
+## Produção e segurança
+
+- página inicial: HTTP 200;
+- manifesto PWA: HTTP 200;
+- logo SVG: HTTP 200;
+- endpoint `/api/lia`: ativo e rejeita GET com HTTP 405;
 - rotas `/api/` não são armazenadas pelo service worker;
-- headers de segurança estão ativos;
-- build-info não usa cache;
-- microfone é permitido apenas para a própria origem;
-- câmera e geolocalização permanecem desabilitadas;
-- nenhuma chave de IA fica exposta no cliente.
+- cache atual: `fluentia-6.6.0`;
+- atualização do service worker aplica a versão nova após troca de controller;
+- CSP e headers de segurança ativos;
+- câmera e geolocalização desabilitadas;
+- microfone limitado à própria origem;
+- nenhuma chave privada no cliente;
+- build executa validação de sintaxe, assets e scan de segredos.
 
-## Critério de estabilidade
+## Limites honestos
 
-Não existe software com garantia honesta de zero bugs. A release é considerada pronta quando:
+Nenhum software sério pode garantir ausência absoluta de bugs, prazo fixo de fluência ou sotaque nativo para todas as pessoas.
 
-1. o build passa;
-2. arquivos obrigatórios existem;
-3. JavaScript e service worker passam na validação;
-4. manifesto e ícones são válidos;
-5. não há segredos no bundle;
-6. regras de prova e certificado permanecem protegidas;
-7. o deployment de produção fica READY;
-8. não existem erros de runtime observados durante a verificação.
-
-## Regra pedagógica
-
-A Lia ajuda a ensinar, corrigir e orientar. Ela não aprova aluno por conta própria.
-
-A progressão e o certificado dependem das regras de avaliação do FluentIA. Isso evita que uma resposta generativa, erro de rede ou indisponibilidade externa altere a comprovação de aprendizagem.
+O compromisso do FluentIA é diferente: manter a trilha principal gratuita, exigir evidência real antes de avançar, informar limitações e corrigir problemas sem falsificar resultado pedagógico.
