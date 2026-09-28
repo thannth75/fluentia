@@ -1,11 +1,12 @@
 {
   "name": "fluentia",
-  "version": "6.4.2",
+  "version": "6.5.0",
   "private": true,
   "type": "module",
   "scripts": {
     "build": "node build.mjs",
     "test:lia": "node tests/lia-unit.mjs",
-    "verify": "npm run build && node --check api/lia.js && npm run test:lia"
+    "test:avatar": "node tests/avatar-unit.mjs",
+    "verify": "npm run build && node --check api/lia.js && npm run test:lia && npm run test:avatar"
   }
 }
