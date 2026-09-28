@@ -31,6 +31,6 @@ for(const mood of moods){
 
 assert.ok(html.includes("u.onstart=()=>setLiaMood('speaking'"), 'Speech start is not linked to Lia');
 assert.ok(html.includes("r.onstart=()=>setLiaMood('listening'"), 'Recognition start is not linked to Lia');
-assert.ok(html.includes("aria-label="Lia, professora virtual 3D interativa""), 'Avatar accessibility label missing');
+assert.ok(html.includes('aria-label="Lia, professora virtual 3D interativa"'), 'Avatar accessibility label missing');
 
 console.log('FluentIA Lia 3D interaction tests passed.');
