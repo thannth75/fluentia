@@ -1,5 +1,20 @@
 # Changelog
 
+## 6.6.0 — Interface premium e Lia reconstruída
+
+- home reconstruída com Lia como centro da experiência;
+- avatar substituído por personagem vetorial 3D mais humana, desenhada no próprio código;
+- cabeça, cabelo, pele, olhos, íris, boca, expressões, tronco, braços, profundidade, luz e aura;
+- olhos acompanham o usuário e a boca reage à síntese de voz;
+- estados Falando, Ouvindo, Pensando, Incentivando e Corrigindo visíveis na home;
+- estados continuam conectados ao reconhecimento de voz, backend, correções, pronúncia, shadowing e avaliações;
+- trilha A0–C2, missão diária, progresso e situações reais ganharam destaque na página inicial;
+- removida qualquer aparência de paywall/"Pro" da experiência principal;
+- PWA passa a aplicar novas versões automaticamente quando o service worker assume o controle;
+- cache atualizado para `fluentia-6.6.0`;
+- build e testes exigem os marcadores da interface 6.6 antes da publicação.
+
+
 ## 6.5.0 — Lia 3D realmente interativa
 
 - substituição do antigo marcador visual genérico por uma personagem Lia construída em CSS 3D/Web, sem depender de biblioteca paga ou CDN externa;
