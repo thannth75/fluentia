@@ -1,5 +1,19 @@
 # Changelog
 
+## 6.5.0 — Lia 3D realmente interativa
+
+- substituição do antigo marcador visual genérico por uma personagem Lia construída em CSS 3D/Web, sem depender de biblioteca paga ou CDN externa;
+- rosto, olhos, pupilas, sobrancelhas, boca, cabelo, cabeça, tronco, braços, luz e profundidade próprios;
+- olhos acompanham o ponteiro do usuário;
+- boca anima enquanto a síntese de voz está falando;
+- estados visuais reais: ociosa, ouvindo, pensando, falando, corrigindo, incentivando e comemorando;
+- reações ligadas à conversação, reconhecimento de voz, correções, aulas, pronúncia, shadowing e provas finais;
+- Lia flutuante disponível em toda a aplicação com atalhos para conversa, fala e Sprint;
+- Lia ampliada na tela de conversação;
+- respeito a `prefers/reduce motion` via configuração do app;
+- testes automáticos específicos para estados e integração do avatar;
+- cache PWA atualizado para 6.5.0.
+
 ## 6.4.2 — Lia integrada ao backend
 
 - tela de conversação passa a chamar `/api/lia` de verdade;
@@ -36,11 +50,3 @@
 - evidência de voz quando o navegador oferece reconhecimento de fala;
 - certificado interno após aprovação no C2;
 - aviso explícito de que o certificado não é acreditação oficial CEFR, Cambridge, IELTS ou TOEFL.
-
-## 6.2.0 — Aprendizado adaptativo e qualidade
-
-- Sprint prático;
-- rotação de habilidades;
-- personalização por ritmo e preferência;
-- melhorias de segurança, PWA e acessibilidade;
-- suíte principal anterior validada com 60/60 verificações no ambiente de QA.
