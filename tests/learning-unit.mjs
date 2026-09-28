@@ -31,3 +31,5 @@ assert.ok(html.includes("state.conversationHistory.push({role:'ai'"),'Lia transc
 assert.ok(html.includes("state.srs[id]={reps:0"),'Saved chat vocabulary is not entering SRS');
 
 console.log('FluentIA 7.0 Speak First learning tests passed.');
+
+assert.ok(html.includes("$$('[data-builder-token]').forEach"),'Sentence Builder must disable token list safely');
