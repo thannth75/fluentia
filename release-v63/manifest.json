@@ -1,0 +1,11 @@
+{
+  "index.html":{"parts":["index_html_gz.part00.b64"],"gzip":true,"sha256":"3e96bd0d755c530f2e83f8262518447dcc0038e2ec30061c2ed595fd7930ee61"},
+  "styles.css":{"parts":["styles_css_gz.part00.b64","styles_css_gz.part01.b64","styles_css_gz.part02.b64"],"gzip":true,"sha256":"557ef6ef50decaaa6d535728add5da88559f911a1f9abe103832ee6de5bea1dc"},
+  "data-v6.js":{"parts":["data-v6_js_gz.part00.b64"],"gzip":true,"sha256":"088bdb85d5dcec7d41c190c3f76df3ca5da994137eb576c7c29c55e84e7754b2"},
+  "app.js":{"parts":["app_js_gz.part00.b64","app_js_gz.part01.b64","app_js_gz.part02.b64","app_js_gz.part03.b64","app_js_gz.part04.b64","app_js_gz.part05.b64","app_js_gz.part06.b64","app_js_gz.part07.b64"],"gzip":true,"sha256":"9f8d7822d9e3eb207498037491a086d742d0cdf967536cfa7e209713bfaa6c79"},
+  "sw.js":{"parts":["sw_js_gz.part00.b64"],"gzip":true,"sha256":"5c128d8a04552a6a9ab0c05c5abe18aee199ebccbfb6fa87193177f694215fb0"},
+  "manifest.webmanifest":{"parts":["manifest_webmanifest_gz.part00.b64"],"gzip":true,"sha256":"c2d73c8beb6a6e166fae8f8dbc05a02c3ddf410a665d8f2a21ff24f898ace87d"},
+  "icons/icon-192.png":{"parts":["icons__icon-192_png.part00.b64"],"gzip":false,"sha256":"d28ee4d7535d8103b61bdef02564dd85f2b4f6eb2320a8e068873075021c062f"},
+  "icons/icon-512.png":{"parts":["icons__icon-512_png.part00.b64","icons__icon-512_png.part01.b64","icons__icon-512_png.part02.b64"],"gzip":false,"sha256":"680330b576efa700452051284fa5a81ac508087762392a2f886f305bf9a0eece"},
+  "assets/lia-3d.webp":{"parts":["assets__lia-3d_webp.part00.b64","assets__lia-3d_webp.part01.b64","assets__lia-3d_webp.part02.b64","assets__lia-3d_webp.part03.b64"],"gzip":false,"sha256":"ddb04dd31e0a0955a315c0b5dabdfaa623826b777cfb66472db82276c5a764a9"}
+}
